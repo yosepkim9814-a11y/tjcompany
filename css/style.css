@@ -656,3 +656,30 @@ hr.sep{border-top:1px solid var(--line) !important}
   border-top:1px solid rgba(255,255,255,.08) !important;
   color:rgba(255,255,255,.72) !important;
 }
+
+
+/* ===== v13 fixes: navigation lag + branding + hero readability ===== */
+.brand .name{color:#fff !important}
+.brand img{opacity:.95}
+
+/* Prevent hidden lightbox from intercepting clicks */
+.lightbox{
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .18s ease;
+}
+.lightbox.open{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* Make anchor jumps land below sticky header */
+:target{scroll-margin-top:92px}
+
+/* Hero overlay readability (index) */
+.hero::before{
+  background:
+    radial-gradient(900px 500px at 20% 20%, rgba(31,111,255,.18), transparent 55%),
+    linear-gradient(90deg, rgba(7,10,18,.88), rgba(7,10,18,.52) 45%, rgba(7,10,18,.82)) !important;
+}
+.hero .h1, .hero .lead{ text-shadow: 0 10px 30px rgba(0,0,0,.55); }
