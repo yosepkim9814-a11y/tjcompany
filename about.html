@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | TJ COMPANY</title>
+  <link rel="icon" href="assets/img/tj-logo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="navbar">
+      <a class="brand" href="index.html">
+        <img src="assets/img/tj-logo.png" alt="TJ logo" />
+        <div class="name">TJ COMPANY</div>
+      </a>
+      <nav class="nav" data-nav>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="production.html">Global Production</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="btn ghost menuBtn" href="javascript:void(0)" data-menu-btn>Menu</a>
+    </div>
+    <div class="mobileNav" data-mobile-nav data-nav>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="production.html">Global Production</a>
+      <a href="partners.html">Partners</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="section pageHero">
+  <div class="container">
+    <div class="breadcrumb">Home / About</div>
+    <h1 class="h2">We build denim with purpose.</h1>
+    <p class="lead">
+      TJ COMPANY는 데님 전문 OEM·프로모션 파트너로, 글로벌 소싱과 품질관리를 기반으로
+      브랜드의 성장을 지원합니다.
+    </p>
+    <hr class="sep" />
+
+    <div class="grid cols-2">
+      <div class="card">
+        <b>Company Info</b>
+        <p class="lead" style="font-size:14px; margin:10px 0 0">
+          대표이사: 이태희<br/>
+          설립일: 2023.12.23<br/>
+          본사: 서울특별시 구로구 디지털로 26길 123 812호<br/>
+          핵심 영역: 의류 제조 · OEM 생산 · 글로벌 소싱 · 품질 관리
+        </p>
+      </div>
+      <div class="card">
+        <b>Focus</b>
+        <p class="lead" style="font-size:14px; margin:10px 0 0">
+          DENIM ALL ITEM · WOVEN PANTS<br/>
+          Korea / China / Vietnam 네트워크 기반 생산 운영
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div>
+        <div style="font-weight:900; letter-spacing:.06em">TJ COMPANY</div>
+        <div>Seoul, Korea · Denim Promotion / OEM</div>
+      </div>
+      <div>© <span id="y"></span> TJ Company. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
