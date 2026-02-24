@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | TJ COMPANY</title>
+  <meta name="description" content="TJ COMPANY — Denim Promotion / OEM. Global production network across Korea, China and Vietnam." />
   <link rel="icon" href="assets/img/tj-logo.png" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
 <header class="header">
   <div class="container">
     <div class="navbar">
@@ -16,6 +16,7 @@
         <img src="assets/img/tj-logo.png" alt="TJ logo" />
         <div class="name">TJ COMPANY</div>
       </a>
+
       <nav class="nav" data-nav>
         <a href="about.html">About</a>
         <a href="products.html">Products</a>
@@ -23,8 +24,10 @@
         <a href="partners.html">Partners</a>
         <a href="contact.html">Contact</a>
       </nav>
+
       <a class="btn ghost menuBtn" href="javascript:void(0)" data-menu-btn>Menu</a>
     </div>
+
     <div class="mobileNav" data-mobile-nav data-nav>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
@@ -40,45 +43,84 @@
     <div class="breadcrumb">Home / About</div>
     <h1 class="h2">We build denim with purpose.</h1>
     <p class="lead">
-      TJ COMPANY는 데님 전문 OEM·프로모션 파트너로, 글로벌 소싱과 품질관리를 기반으로
-      브랜드의 성장을 지원합니다.
+      TJ COMPANY는 데님 전문 제조 파트너로, 한국·중국·베트남 네트워크 기반의
+      글로벌 생산 운영과 품질 관리로 브랜드의 성장을 지원합니다.
     </p>
+
     <hr class="sep" />
 
     <div class="grid cols-2">
       <div class="card">
-        <b>Company Info</b>
-        <p class="lead" style="font-size:14px; margin:10px 0 0">
+        <div class="h3">Company Info</div>
+        <div class="small" style="margin-top:10px">
           대표이사: 이태희<br/>
           설립일: 2023.12.23<br/>
-          본사: 서울특별시 구로구 디지털로 26길 123 812호<br/>
-          핵심 영역: 의류 제조 · OEM 생산 · 글로벌 소싱 · 품질 관리
-        </p>
+          사업자등록번호: 286-88-03405<br/>
+          본사: 서울특별시 구로구 디지털로 26길 123 지플러스타워 812호
+        </div>
       </div>
       <div class="card">
-        <b>Focus</b>
-        <p class="lead" style="font-size:14px; margin:10px 0 0">
-          DENIM ALL ITEM · WOVEN PANTS<br/>
-          Korea / China / Vietnam 네트워크 기반 생산 운영
-        </p>
+        <div class="h3">Core Business</div>
+        <div style="margin-top:10px">
+          <span class="pill">의류 제조</span>
+          <span class="pill">OEM 생산 서비스</span>
+          <span class="pill">글로벌 소싱 관리</span>
+          <span class="pill">품질 관리</span>
+        </div>
+        <div class="small" style="margin-top:10px">
+          취급 아이템: DENIM ALL ITEM · WOVEN PANTS
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="h2">Organization</div>
+    <p class="lead">초기 상담부터 최종 납품까지 원활한 서비스를 위한 협업 구조입니다.</p>
+
+    <div class="grid cols-3" style="margin-top:18px">
+      <div class="card soft">
+        <div class="h3">Apparel Division</div>
+        <div class="small">Denim Team · Woven Team</div>
+      </div>
+      <div class="card soft">
+        <div class="h3">Overseas Production</div>
+        <div class="small">China Branch · Vietnam Branch</div>
+      </div>
+      <div class="card soft">
+        <div class="h3">Management Support</div>
+        <div class="small">Finance/Accounting · HR/GA · Trade</div>
+      </div>
+    </div>
+  </div>
+</section>
 <footer class="footer">
   <div class="container">
     <div class="row">
       <div>
         <div style="font-weight:900; letter-spacing:.06em">TJ COMPANY</div>
         <div>Seoul, Korea · Denim Promotion / OEM</div>
+        <div class="small">본사: 서울특별시 구로구 디지털로 26길 123 지플러스타워 812호</div>
       </div>
-      <div>© <span id="y"></span> TJ Company. All rights reserved.</div>
+      <div>
+        <div>© <span id="y"></span> TJ Company. All rights reserved.</div>
+      </div>
     </div>
   </div>
 </footer>
 
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<div class="lightbox" data-lightbox>
+  <div class="inner">
+    <div class="bar">
+      <div data-lightbox-title>Preview</div>
+      <button type="button" data-lightbox-close>Close</button>
+    </div>
+    <img data-lightbox-img alt="preview" />
+  </div>
+</div>
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>
