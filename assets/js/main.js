@@ -107,73 +107,61 @@
   if(y) y.textContent = new Date().getFullYear();
 })();
 
-/* ===== v8: lightbox + sliders ===== */
+/* ===== v12: robust lightbox close ===== */
 (function(){
   const lb = document.querySelector('[data-lightbox]');
-  const lbImg = lb ? lb.querySelector('img') : null;
-  const lbClose = lb ? lb.querySelector('[data-lightbox-close]') : null;
+  if(!lb) return;
+  const img = lb.querySelector('img');
+  const closeBtn = lb.querySelector('[data-lightbox-close]');
 
-  function openLightbox(src, alt){
-    if(!lb || !lbImg) return;
-    lbImg.src = src;
-    lbImg.alt = alt || '';
+  function open(src, alt){
+    if(!img) return;
+    img.src = src;
+    img.alt = alt || '';
     lb.classList.add('open');
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
   }
-  function closeLightbox(){
-    if(!lb || !lbImg) return;
+  function close(){
     lb.classList.remove('open');
-    lbImg.src = '';
+    if(img) img.src = '';
+    document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('[data-open-lightbox]').forEach(el=>{
-    el.addEventListener('click', (e)=>{
+  // Event delegation: any click on [data-open-lightbox]
+  document.addEventListener('click', (e)=>{
+    const a = e.target.closest('[data-open-lightbox]');
+    if(a){
       e.preventDefault();
-      const src = el.getAttribute('data-src') || el.getAttribute('href');
-      const alt = el.getAttribute('data-alt') || el.getAttribute('aria-label') || '';
-      openLightbox(src, alt);
-    });
+      const src = a.getAttribute('data-src') || a.getAttribute('href');
+      const alt = a.getAttribute('data-alt') || a.getAttribute('aria-label') || '';
+      open(src, alt);
+      return;
+    }
   });
 
-  if(lb){
-    lb.addEventListener('click', (e)=>{
-      // clicking backdrop closes
-      if(e.target === lb) closeLightbox();
-    });
+  // Close by X
+  if(closeBtn){
+    closeBtn.addEventListener('click', (e)=>{ e.preventDefault(); close(); });
   }
-  if(lbClose){
-    lbClose.addEventListener('click', (e)=>{
-      e.preventDefault();
-      closeLightbox();
-    });
-  }
+
+  // Close by clicking backdrop (not the frame/image)
+  lb.addEventListener('click', (e)=>{
+    if(e.target === lb) close();
+  });
+
+  // ESC closes
   document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape') closeLightbox();
-  });
-
-  // Slider buttons: scroll container by width
-  document.querySelectorAll('[data-slider]').forEach(slider=>{
-    const track = slider.querySelector('[data-track]');
-    const prev = slider.querySelector('[data-prev]');
-    const next = slider.querySelector('[data-next]');
-    if(!track) return;
-
-    const scrollByPage = (dir)=>{
-      const w = track.clientWidth;
-      track.scrollBy({left: dir * w, behavior:'smooth'});
-    };
-    prev && prev.addEventListener('click', ()=>scrollByPage(-1));
-    next && next.addEventListener('click', ()=>scrollByPage( 1));
+    if(e.key === 'Escape' && lb.classList.contains('open')) close();
   });
 })();
 
 
-/* ===== v11: Lookbook autoplay (one slide at a time) ===== */
+/* ===== v12: lookbook autoplay (one-by-one) ===== */
 (function(){
   const look = document.querySelector('[data-lookbook]');
   if(!look) return;
-
   const track = look.querySelector('[data-track]');
   const slides = track ? Array.from(look.querySelectorAll('[data-slide]')) : [];
   const prev = look.querySelector('[data-prev]');
@@ -186,7 +174,6 @@
   let idx = 0;
   let timer = null;
 
-  // build dots
   if(dotsWrap && dotsWrap.childElementCount === 0){
     slides.forEach((_,i)=>{
       const d = document.createElement('div');
@@ -198,46 +185,36 @@
 
   function updateDots(){
     if(!dotsWrap) return;
-    Array.from(dotsWrap.children).forEach((el,i)=>{
-      el.classList.toggle('on', i===idx);
-    });
+    Array.from(dotsWrap.children).forEach((el,i)=> el.classList.toggle('on', i===idx));
   }
 
   function go(i, user=false){
     idx = (i + slides.length) % slides.length;
-    const w = look.clientWidth; // one slide per viewport
-    track.scrollTo({left: idx * w, behavior: user ? 'smooth' : 'smooth'});
+    const w = look.clientWidth;
+    track.scrollTo({left: idx * w, behavior:'smooth'});
     updateDots();
-    if(user) stop(); // if user interacts, stop autoplay to reduce annoyance
+    if(user) stop();
   }
-
-  function nextSlide(){ go(idx+1,false); }
-  function prevSlide(){ go(idx-1,true); }
-
-  prev && prev.addEventListener('click', (e)=>{e.preventDefault(); prevSlide();});
-  next && next.addEventListener('click', (e)=>{e.preventDefault(); go(idx+1,true);});
 
   function start(){
     if(timer) return;
-    timer = setInterval(()=>{ nextSlide(); }, intervalMs);
+    timer = setInterval(()=>go(idx+1,false), intervalMs);
   }
   function stop(){
     if(timer){ clearInterval(timer); timer=null; }
   }
 
-  // pause on hover/focus
+  prev && prev.addEventListener('click', (e)=>{e.preventDefault(); go(idx-1,true);});
+  next && next.addEventListener('click', (e)=>{e.preventDefault(); go(idx+1,true);});
+
   look.addEventListener('mouseenter', stop);
   look.addEventListener('mouseleave', start);
   look.addEventListener('focusin', stop);
   look.addEventListener('focusout', start);
-
-  // stop on manual scroll/touch
-  track.addEventListener('wheel', ()=>stop(), {passive:true});
-  track.addEventListener('touchstart', ()=>stop(), {passive:true});
-  look.addEventListener('pointerdown', ()=>stop(), {passive:true});
-
-  // keep aligned on resize
-  window.addEventListener('resize', ()=>{ go(idx,false); });
+  track.addEventListener('wheel', stop, {passive:true});
+  track.addEventListener('touchstart', stop, {passive:true});
+  look.addEventListener('pointerdown', stop, {passive:true});
+  window.addEventListener('resize', ()=>go(idx,false));
 
   start();
 })();
