@@ -3,58 +3,111 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TJ COMPANY | Denim Promotion</title>
-  <style>
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:#0b0f1a; color:#fff; }
-    .wrap { max-width: 1100px; margin:0 auto; padding: 80px 24px; }
-    .tag { display:inline-block; padding:6px 12px; border:1px solid rgba(255,255,255,.2); border-radius:999px; font-size:14px; opacity:.9;}
-    h1 { font-size:52px; line-height:1.05; margin:18px 0 14px; }
-    p { font-size:18px; opacity:.9; max-width: 720px; }
-    .cta { margin-top:28px; display:flex; gap:12px; flex-wrap:wrap; }
-    a.btn { padding:12px 16px; border-radius:14px; text-decoration:none; color:#0b0f1a; background:#7aa7ff; font-weight:700; }
-    a.ghost { padding:12px 16px; border-radius:14px; text-decoration:none; color:#fff; border:1px solid rgba(255,255,255,.25); }
-    .grid { margin-top:56px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:14px; }
-    .card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:18px; }
-    .card h3 { margin:0 0 10px; font-size:18px; }
-    .card p { margin:0; font-size:14px; opacity:.85; }
-    footer { margin-top:70px; opacity:.7; font-size:13px; }
-    @media (max-width: 820px) { h1{font-size:38px;} .grid{grid-template-columns:1fr;} }
-  </style>
+  <title>TJ COMPANY | Denim Promotion / OEM</title>
+  <meta name="description" content="Trend-driven denim promotion & OEM. Global sourcing, quality control, stable delivery." />
+  <link rel="icon" href="assets/img/tj-logo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <div class="wrap">
-    <span class="tag">DENIM SPECIALIST · OEM / PROMOTION</span>
-    <h1>DENIM IS OUR LANGUAGE.</h1>
-    <p>
+
+<header class="header">
+  <div class="container">
+    <div class="navbar">
+      <a class="brand" href="index.html">
+        <img src="assets/img/tj-logo.png" alt="TJ logo" />
+        <div class="name">TJ COMPANY</div>
+      </a>
+
+      <nav class="nav" data-nav>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="production.html">Global Production</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a class="btn ghost menuBtn" href="javascript:void(0)" data-menu-btn>Menu</a>
+    </div>
+
+    <div class="mobileNav" data-mobile-nav data-nav>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="production.html">Global Production</a>
+      <a href="partners.html">Partners</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="assets/video/hero.mp4" type="video/mp4" />
+  </video>
+
+  <div class="container content">
+    <span class="badge">DENIM SPECIALIST · OEM / PROMOTION</span>
+    <div class="h1">DENIM IS OUR LANGUAGE.</div>
+    <p class="lead">
       TJ COMPANY는 데님 전문 프로모션·OEM 파트너로,
-      기획–생산–납품까지 글로벌 소싱과 품질관리로 브랜드의 성장을 지원합니다.
+      기획–글로벌 소싱–생산–납품까지 원스톱 솔루션을 제공합니다.
     </p>
 
-    <div class="cta">
-      <a class="btn" href="#contact">Contact</a>
-      <a class="ghost" href="#about">Company</a>
+    <div class="btnrow">
+      <a class="btn primary" href="contact.html">Contact</a>
+      <a class="btn ghost" href="about.html">Company</a>
     </div>
 
-    <div class="grid" id="about">
-      <div class="card">
-        <h3>Denim All Items</h3>
-        <p>Denim pants, jacket, shirt, skirt 등 데님 전 품목 대응</p>
-      </div>
-      <div class="card">
-        <h3>Global Production</h3>
-        <p>Korea · China · Vietnam 네트워크 기반 생산 운영</p>
-      </div>
-      <div class="card">
-        <h3>Quality First</h3>
-        <p>국제 기준의 품질 시스템으로 안정적 납기와 QC</p>
-      </div>
+    <div class="grid cols-3 kpis">
+      <div class="card kpi"><b>4.32M</b><span>pcs / year capacity</span></div>
+      <div class="card kpi"><b>Korea · China · Vietnam</b><span>global network</span></div>
+      <div class="card kpi"><b>Quality First</b><span>stable delivery & QC</span></div>
     </div>
-
-    <footer id="contact">
-      <div><b>TJ COMPANY</b></div>
-      <div>Seoul, Korea · Denim Promotion / OEM</div>
-      <div>문의: (이메일/전화 입력)</div>
-    </footer>
   </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="h2">What We Do</div>
+    <p class="lead">데님에 특화된 제조 역량과 글로벌 생산 네트워크로 브랜드를 지원합니다.</p>
+
+    <div class="grid cols-3" style="margin-top:18px">
+      <div class="card">
+        <b>Denim All Items</b>
+        <p class="lead" style="font-size:14px; margin:8px 0 0">
+          Denim pants, jacket, shirt, skirt 등 데님 전 품목 대응
+        </p>
+      </div>
+      <div class="card">
+        <b>Global Production</b>
+        <p class="lead" style="font-size:14px; margin:8px 0 0">
+          Korea Planning · China Sourcing · Vietnam Manufacturing
+        </p>
+      </div>
+      <div class="card">
+        <b>Quality Control</b>
+        <p class="lead" style="font-size:14px; margin:8px 0 0">
+          국제 기준의 품질 시스템으로 안정적인 납기와 QC 운영
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div>
+        <div style="font-weight:900; letter-spacing:.06em">TJ COMPANY</div>
+        <div>Seoul, Korea · Denim Promotion / OEM</div>
+      </div>
+      <div>
+        <div>© <span id="y"></span> TJ Company. All rights reserved.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
