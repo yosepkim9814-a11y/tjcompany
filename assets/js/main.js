@@ -106,3 +106,115 @@
   const y = document.getElementById('y');
   if(y) y.textContent = new Date().getFullYear();
 })();
+
+/* ===== v8: lightbox + sliders ===== */
+(function(){
+  const lb = document.querySelector('[data-lightbox]');
+  const lbImg = lb ? lb.querySelector('img') : null;
+  const lbClose = lb ? lb.querySelector('[data-lightbox-close]') : null;
+
+  function openLightbox(src, alt){
+    if(!lb || !lbImg) return;
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    if(!lb || !lbImg) return;
+    lb.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-open-lightbox]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const src = el.getAttribute('data-src') || el.getAttribute('href');
+      const alt = el.getAttribute('data-alt') || el.getAttribute('aria-label') || '';
+      openLightbox(src, alt);
+    });
+  });
+
+  if(lb){
+    lb.addEventListener('click', (e)=>{
+      // clicking backdrop closes
+      if(e.target === lb) closeLightbox();
+    });
+  }
+  if(lbClose){
+    lbClose.addEventListener('click', (e)=>{
+      e.preventDefault();
+      closeLightbox();
+    });
+  }
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape') closeLightbox();
+  });
+
+  // Slider buttons: scroll container by width
+  document.querySelectorAll('[data-slider]').forEach(slider=>{
+    const track = slider.querySelector('[data-track]');
+    const prev = slider.querySelector('[data-prev]');
+    const next = slider.querySelector('[data-next]');
+    if(!track) return;
+
+    const scrollByPage = (dir)=>{
+      const w = track.clientWidth;
+      track.scrollBy({left: dir * w, behavior:'smooth'});
+    };
+    prev && prev.addEventListener('click', ()=>scrollByPage(-1));
+    next && next.addEventListener('click', ()=>scrollByPage( 1));
+  });
+})();
+
+
+
+/* ===== v10: slider autoplay ===== */
+(function(){
+  document.querySelectorAll('[data-slider][data-autoplay]').forEach(slider=>{
+    const track = slider.querySelector('[data-track]');
+    if(!track) return;
+
+    const intervalMs = parseInt(slider.getAttribute('data-autoplay'), 10) || 5500;
+    let timer = null;
+    let userInteracted = false;
+
+    const getNextScrollLeft = ()=>{
+      const w = track.clientWidth;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      // If near end, go to start
+      if(track.scrollLeft >= maxScroll - 5) return 0;
+      return Math.min(track.scrollLeft + w, maxScroll);
+    };
+
+    const tick = ()=>{
+      if(userInteracted) return;
+      track.scrollTo({left: getNextScrollLeft(), behavior:'smooth'});
+    };
+
+    const start = ()=>{
+      if(timer) return;
+      timer = setInterval(tick, intervalMs);
+    };
+    const stop = ()=>{
+      if(timer){
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+
+    // pause on hover/focus
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    slider.addEventListener('focusin', stop);
+    slider.addEventListener('focusout', start);
+
+    // if user clicks arrows or scrolls manually, stop autoplay
+    slider.addEventListener('pointerdown', ()=>{ userInteracted = true; stop(); }, {passive:true});
+    track.addEventListener('wheel', ()=>{ userInteracted = true; stop(); }, {passive:true});
+    track.addEventListener('touchstart', ()=>{ userInteracted = true; stop(); }, {passive:true});
+
+    start();
+  });
+})();
