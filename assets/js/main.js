@@ -169,52 +169,75 @@
 })();
 
 
-
-/* ===== v10: slider autoplay ===== */
+/* ===== v11: Lookbook autoplay (one slide at a time) ===== */
 (function(){
-  document.querySelectorAll('[data-slider][data-autoplay]').forEach(slider=>{
-    const track = slider.querySelector('[data-track]');
-    if(!track) return;
+  const look = document.querySelector('[data-lookbook]');
+  if(!look) return;
 
-    const intervalMs = parseInt(slider.getAttribute('data-autoplay'), 10) || 5500;
-    let timer = null;
-    let userInteracted = false;
+  const track = look.querySelector('[data-track]');
+  const slides = track ? Array.from(look.querySelectorAll('[data-slide]')) : [];
+  const prev = look.querySelector('[data-prev]');
+  const next = look.querySelector('[data-next]');
+  const dotsWrap = look.querySelector('[data-dots]');
+  const intervalMs = parseInt(look.getAttribute('data-autoplay'),10) || 5500;
 
-    const getNextScrollLeft = ()=>{
-      const w = track.clientWidth;
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      // If near end, go to start
-      if(track.scrollLeft >= maxScroll - 5) return 0;
-      return Math.min(track.scrollLeft + w, maxScroll);
-    };
+  if(!track || slides.length === 0) return;
 
-    const tick = ()=>{
-      if(userInteracted) return;
-      track.scrollTo({left: getNextScrollLeft(), behavior:'smooth'});
-    };
+  let idx = 0;
+  let timer = null;
 
-    const start = ()=>{
-      if(timer) return;
-      timer = setInterval(tick, intervalMs);
-    };
-    const stop = ()=>{
-      if(timer){
-        clearInterval(timer);
-        timer = null;
-      }
-    };
+  // build dots
+  if(dotsWrap && dotsWrap.childElementCount === 0){
+    slides.forEach((_,i)=>{
+      const d = document.createElement('div');
+      d.className = 'dot' + (i===0 ? ' on' : '');
+      d.addEventListener('click', ()=>go(i,true));
+      dotsWrap.appendChild(d);
+    });
+  }
 
-    // pause on hover/focus
-    slider.addEventListener('mouseenter', stop);
-    slider.addEventListener('mouseleave', start);
-    slider.addEventListener('focusin', stop);
-    slider.addEventListener('focusout', start);
+  function updateDots(){
+    if(!dotsWrap) return;
+    Array.from(dotsWrap.children).forEach((el,i)=>{
+      el.classList.toggle('on', i===idx);
+    });
+  }
 
-    // if user clicks arrows or scrolls manually, stop autoplay
-    slider.addEventListener('pointerdown', ()=>{ userInteracted = true; stop(); }, {passive:true});
-    track.addEventListener('wheel', ()=>{ userInteracted = true; stop(); }, {passive:true});
-    track.addEventListener('touchstart', ()=>{ userInteracted = true; stop(); }, {passive:true});
+  function go(i, user=false){
+    idx = (i + slides.length) % slides.length;
+    const w = look.clientWidth; // one slide per viewport
+    track.scrollTo({left: idx * w, behavior: user ? 'smooth' : 'smooth'});
+    updateDots();
+    if(user) stop(); // if user interacts, stop autoplay to reduce annoyance
+  }
 
-    start();
-  });
+  function nextSlide(){ go(idx+1,false); }
+  function prevSlide(){ go(idx-1,true); }
+
+  prev && prev.addEventListener('click', (e)=>{e.preventDefault(); prevSlide();});
+  next && next.addEventListener('click', (e)=>{e.preventDefault(); go(idx+1,true);});
+
+  function start(){
+    if(timer) return;
+    timer = setInterval(()=>{ nextSlide(); }, intervalMs);
+  }
+  function stop(){
+    if(timer){ clearInterval(timer); timer=null; }
+  }
+
+  // pause on hover/focus
+  look.addEventListener('mouseenter', stop);
+  look.addEventListener('mouseleave', start);
+  look.addEventListener('focusin', stop);
+  look.addEventListener('focusout', start);
+
+  // stop on manual scroll/touch
+  track.addEventListener('wheel', ()=>stop(), {passive:true});
+  track.addEventListener('touchstart', ()=>stop(), {passive:true});
+  look.addEventListener('pointerdown', ()=>stop(), {passive:true});
+
+  // keep aligned on resize
+  window.addEventListener('resize', ()=>{ go(idx,false); });
+
+  start();
 })();
