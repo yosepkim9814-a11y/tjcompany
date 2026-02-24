@@ -18,72 +18,75 @@
       </a>
 
       <nav class="nav" data-nav>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="production.html">Global Production</a>
-        <a href="partners.html">Partners</a>
-        <a href="contact.html">Contact</a>
+        <a href="about.html"><span class="nav-en">About</span><span class="nav-ko">회사소개</span></a>
+        <a href="products.html"><span class="nav-en">Products</span><span class="nav-ko">제품</span></a>
+        <a href="production.html"><span class="nav-en">Global Production</span><span class="nav-ko">글로벌 생산</span></a>
+        <a href="partners.html"><span class="nav-en">Partners</span><span class="nav-ko">파트너</span></a>
+        <a href="contact.html"><span class="nav-en">Contact</span><span class="nav-ko">문의</span></a>
       </nav>
 
       <a class="btn ghost menuBtn" href="javascript:void(0)" data-menu-btn>Menu</a>
     </div>
 
     <div class="mobileNav" data-mobile-nav data-nav>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="production.html">Global Production</a>
-      <a href="partners.html">Partners</a>
-      <a href="contact.html">Contact</a>
+      <a href="about.html"><span class="nav-en">About</span><span class="nav-ko">회사소개</span></a>
+      <a href="products.html"><span class="nav-en">Products</span><span class="nav-ko">제품</span></a>
+      <a href="production.html"><span class="nav-en">Global Production</span><span class="nav-ko">글로벌 생산</span></a>
+      <a href="partners.html"><span class="nav-en">Partners</span><span class="nav-ko">파트너</span></a>
+      <a href="contact.html"><span class="nav-en">Contact</span><span class="nav-ko">문의</span></a>
     </div>
   </div>
 </header>
 
-<section class="section pageHero">
+<section class="section light pageHero">
   <div class="container">
     <div class="breadcrumb">Home / Contact</div>
-    <h1 class="h2">Let’s build denim together.</h1>
-    <p class="lead">프로젝트 문의를 남겨주시면 빠르게 회신드리겠습니다.</p>
+    <h1 class="h2">Contact</h1>
+    <p class="lead">문의 주시면 빠르게 회신드리겠습니다.</p>
     <hr class="sep" />
 
     <div class="grid cols-2">
       <div class="card">
-        <div class="h3">Head Office</div>
-        <div class="small" style="margin-top:10px">
-          서울특별시 구로구 디지털로 26길 123<br/>
-          지플러스타워 812호
-        </div>
-
-        <div class="h3" style="margin-top:16px">Contact</div>
-        <div class="small" style="margin-top:10px">
-          Email: <a href="mailto:info@tjcompany.co.kr" style="text-decoration:underline">info@tjcompany.co.kr</a><br/>
-          Tel: (여기에 전화번호 입력)
-        </div>
-
-        <div class="btnrow">
-          <a class="btn primary" href="mailto:info@tjcompany.co.kr?subject=TJ%20Company%20Inquiry">Email Us</a>
-          <a class="btn ghost" href="products.html">Products</a>
+        <b>Head Office</b>
+        <p class="lead" style="font-size:14px;margin:10px 0 0">
+          주소: 서울특별시 구로구 디지털로26길 123 지플러스타워 812호<br/>
+          T (82)2-2038-8681<br/>
+          F (82)2-2038-4640
+        </p>
+        <div style="margin-top:12px">
+          <iframe title="HQ map" src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B5%AC%EB%A1%9C%EA%B5%AC%20%EB%94%94%EC%A7%80%ED%84%B8%EB%A1%9C26%EA%B8%B8%20123%20%EC%A7%80%ED%94%8C%EB%9F%AC%EC%8A%A4%ED%83%80%EC%9B%8C%20812%ED%98%B8&output=embed" width="100%" height="260" style="border:0;border-radius:16px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
 
       <div class="card">
-        <div class="h3">Quick Inquiry</div>
-        <div class="small" style="margin-top:8px">정적 사이트라 폼 전송은 외부 서비스(Formspree 등) 연결 시 활성화됩니다. 우선은 이메일로 문의 주세요.</div>
+        <b>Inquiry Form</b>
+        <p class="lead" style="font-size:14px;margin:10px 0 0">
+          아래 폼은 Formspree로 전송됩니다. <br/>
+          <span style="opacity:.75">※ action URL의 YOUR_FORM_ID를 Formspree에서 받은 값으로 교체하세요.</span>
+        </p>
 
-        <div style="margin-top:14px; display:grid; gap:10px">
-          <div class="card soft">
-            <div class="small">✔ 개발/샘플/양산 문의</div>
-            <div class="small">✔ 납기/수량/원단/워싱</div>
-            <div class="small">✔ QC 기준/검수 프로세스</div>
-          </div>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="margin-top:12px;display:grid;gap:10px">
+          <input name="name" required placeholder="Name" style="padding:12px 12px;border-radius:14px;border:1px solid rgba(11,18,32,.14)"/>
+          <input type="email" name="email" required placeholder="Email" style="padding:12px 12px;border-radius:14px;border:1px solid rgba(11,18,32,.14)"/>
+          <input name="brand" placeholder="Brand / Company" style="padding:12px 12px;border-radius:14px;border:1px solid rgba(11,18,32,.14)"/>
+          <textarea name="message" required placeholder="Message" rows="5" style="padding:12px 12px;border-radius:14px;border:1px solid rgba(11,18,32,.14);resize:vertical"></textarea>
+          <button class="btn primary" type="submit" style="width:max-content">Send</button>
+        </form>
+      </div>
+    </div>
 
-          <div class="card soft">
-            <div class="small">추천 제목 예시</div>
-            <div class="small" style="margin-top:8px">
-              [Brand] 26SS Denim Pants OEM 문의<br/>
-              수량/납기/사양(원단/워싱)/레퍼런스 첨부
-            </div>
-          </div>
-        </div>
+    <div class="grid cols-3" style="margin-top:18px">
+      <div class="card">
+        <b>ETBJ Garment</b>
+        <p class="lead" style="font-size:13px;margin:10px 0 0">54D Duong Cong Khi Street, Xuan Thoi Son Commune, Ho Chi Minh City, Viet Nam</p>
+      </div>
+      <div class="card">
+        <b>JB Garment Vina</b>
+        <p class="lead" style="font-size:13px;margin:10px 0 0">Go Cao Hamlet, Hau Nghia Town, Duc Hoa District, Long An Province, Viet Nam</p>
+      </div>
+      <div class="card">
+        <b>Kim Sun</b>
+        <p class="lead" style="font-size:13px;margin:10px 0 0">678/62/35 Nguyen Anh Thu Street, Hiep Thanh Ward, District 12, Ho Chi Minh City, Viet Nam</p>
       </div>
     </div>
   </div>
