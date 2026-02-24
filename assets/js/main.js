@@ -13,17 +13,6 @@
     if(href === path) a.classList.add('active');
   });
 
-  // Hover: EN -> KO label
-  document.querySelectorAll('[data-nav] a').forEach(a=>{
-    const en = a.querySelector('.nav-en');
-    const ko = a.querySelector('.nav-ko');
-    if(!en || !ko) return;
-    a.addEventListener('mouseenter', ()=>{ en.style.display='none'; ko.style.display='inline'; });
-    a.addEventListener('mouseleave', ()=>{ en.style.display='inline'; ko.style.display='none'; });
-    // default: show EN
-    en.style.display='inline'; ko.style.display='none';
-  });
-
   // Lightbox (shared for products / about galleries)
   const lb = document.querySelector('[data-lightbox]');
   const lbImg = document.querySelector('[data-lightbox-img]');

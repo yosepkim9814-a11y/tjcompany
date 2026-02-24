@@ -92,15 +92,37 @@ img{max-width:100%; display:block}
   transition:.18s ease;
   border:1px solid transparent;
 }
+
+.nav a{position:relative; overflow:hidden;}
+.nav a .nav-en,
+.nav a .nav-ko{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  transition:opacity .22s ease, transform .22s ease;
+  white-space:nowrap;
+}
+.nav a .nav-ko{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transform:translateY(2px);
+  color:rgba(255,255,255,.92);
+}
+.nav a:hover .nav-en,
+.nav a:focus-visible .nav-en{opacity:0; transform:translateY(-2px);}
+.nav a:hover .nav-ko,
+.nav a:focus-visible .nav-ko{opacity:1; transform:translateY(0);}
 .nav a:hover{background:rgba(255,255,255,.06); color:rgba(255,255,255,.92)}
 .nav .active{color:#fff; background:rgba(110,168,255,.12); border-color:rgba(110,168,255,.24)}
 .menuBtn{display:none}
-.mobileNav{display:none}
+.mobileNav{display:none !important}
 @media (max-width: 860px){
   .nav{display:none}
   .menuBtn{display:inline-flex}
   .mobileNav{display:none !important; padding:10px 0 14px}
-  .mobileNav.open{display:grid; gap:8px}
+  .mobileNav.open{display:grid !important; gap:8px}
   .mobileNav a{
     padding:10px 12px; border-radius:12px;
     background:rgba(255,255,255,.04);
@@ -354,3 +376,23 @@ hr.sep{border:0; border-top:1px solid rgba(255,255,255,.08); margin:18px 0}
 /* Page headings */
 .pageHero .h2{font-size:30px}
 @media (max-width: 860px){ .pageHero .h2{font-size:26px} }
+
+
+/* Light overrides for helpers */
+.section.light .small{color:rgba(11,18,32,.72)}
+.section.light .pill{border:1px solid rgba(11,18,32,.16); background:rgba(11,18,32,.03); color:rgba(11,18,32,.86)}
+
+/* Organization diagram */
+.org-wrap{background:var(--panel2); border:1px solid var(--border); border-radius:22px; padding:18px; max-width:900px}
+.org-node{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:14px 14px; text-align:center}
+.org-ceo{max-width:260px; margin:0 auto}
+.org-title{font-weight:900; letter-spacing:.02em}
+.org-sub{font-size:13px; color:rgba(255,255,255,.66); margin-top:6px}
+.org-bridge{height:26px; position:relative}
+.org-bridge:before{content:""; position:absolute; left:50%; top:0; bottom:0; width:1px; background:rgba(255,255,255,.18)}
+.org-row{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px}
+.org-note{margin-top:14px; padding:14px; border-radius:18px; background:rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.10)}
+@media (max-width:860px){
+  .org-row{grid-template-columns:1fr}
+  .org-bridge{height:16px}
+}
