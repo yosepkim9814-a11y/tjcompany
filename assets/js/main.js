@@ -373,3 +373,16 @@
   window.addEventListener('resize', unblock);
   document.addEventListener('click', ()=>setTimeout(unblock, 0), true);
 })();
+
+
+
+/* ===== v20: disable lookbook autoplay when data-autoplay is 0 ===== */
+(function(){
+  const look = document.querySelector('[data-lookbook]');
+  if(!look) return;
+  const v = parseInt(look.getAttribute('data-autoplay')||'0',10);
+  if(v <= 0){
+    // No autoplay; swipe only
+    look.setAttribute('data-autoplay-disabled','1');
+  }
+})();
