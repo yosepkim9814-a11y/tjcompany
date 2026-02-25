@@ -547,3 +547,10 @@ hr.sep{border:0; border-top:1px solid rgba(255,255,255,.08); margin:18px 0}
 .nav .active{background:rgba(255,255,255,.10) !important; border:1px solid rgba(255,255,255,.16) !important}
 .lightbox{pointer-events:none !important; opacity:0 !important;}
 .lightbox.open{pointer-events:auto !important; opacity:1 !important;}
+
+
+/* ===== v17 hotfix: prevent any overlay blocking header clicks ===== */
+.lightbox{display:none !important;}
+.lightbox.open{display:flex !important;}
+/* in case any legacy modal exists */
+.modal, .previewModal, .overlay, .backdrop{display:none !important; pointer-events:none !important;}
