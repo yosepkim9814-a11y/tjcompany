@@ -554,3 +554,11 @@ hr.sep{border:0; border-top:1px solid rgba(255,255,255,.08); margin:18px 0}
 .lightbox.open{display:flex !important;}
 /* in case any legacy modal exists */
 .modal, .previewModal, .overlay, .backdrop{display:none !important; pointer-events:none !important;}
+
+
+/* ===== v19 full replace: consistent branding ===== */
+.header{background:#000 !important;}
+.brand .name{color:#fff !important; text-shadow:0 0 14px rgba(255,255,255,.18);} 
+.brand img{filter: drop-shadow(0 0 10px rgba(255,255,255,.12));}
+.lightbox{display:none !important;}
+.lightbox.open{display:flex !important;}
