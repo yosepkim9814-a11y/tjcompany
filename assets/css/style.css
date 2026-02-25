@@ -658,28 +658,40 @@ hr.sep{border-top:1px solid var(--line) !important}
 }
 
 
-/* ===== v13 fixes: navigation lag + branding + hero readability ===== */
-.brand .name{color:#fff !important}
-.brand img{opacity:.95}
+/* ===== v14: tighter organization + slider arrows + pure black header + prevent click-block ===== */
+.header{background:#000 !important;}
+.footer{background:#000 !important;}
 
-/* Prevent hidden lightbox from intercepting clicks */
-.lightbox{
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .18s ease;
-}
-.lightbox.open{
-  opacity:1;
-  pointer-events:auto;
-}
+/* Lightbox must never block clicks when closed */
+.lightbox{pointer-events:none !important; opacity:0 !important;}
+.lightbox.open{pointer-events:auto !important; opacity:1 !important;}
 
-/* Make anchor jumps land below sticky header */
-:target{scroll-margin-top:92px}
+/* Products slider arrows visible + clickable */
+.lookbook .sliderBtn{z-index:5}
+.lookbook .sliderBtn.prev{left:14px !important}
+.lookbook .sliderBtn.next{right:14px !important}
 
-/* Hero overlay readability (index) */
-.hero::before{
-  background:
-    radial-gradient(900px 500px at 20% 20%, rgba(31,111,255,.18), transparent 55%),
-    linear-gradient(90deg, rgba(7,10,18,.88), rgba(7,10,18,.52) 45%, rgba(7,10,18,.82)) !important;
+/* Organization: denser diagram */
+.orgWrap{
+  background:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,0));
+  border:1px solid rgba(10,16,28,.10);
+  border-radius:20px;
+  padding:18px;
 }
-.hero .h1, .hero .lead{ text-shadow: 0 10px 30px rgba(0,0,0,.55); }
+.orgGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:12px;
+  margin-top:12px;
+}
+@media (max-width: 860px){ .orgGrid{grid-template-columns:1fr} }
+.orgNode{
+  border:1px solid rgba(10,16,28,.10);
+  border-radius:16px;
+  padding:14px;
+  background:#fff;
+  box-shadow: var(--shadow2);
+}
+.orgTop{display:flex; justify-content:center;}
+.orgTop .orgNode{max-width:420px; width:100%;}
+.orgLine{height:18px; width:2px; background:rgba(10,16,28,.14); margin:10px auto;}
