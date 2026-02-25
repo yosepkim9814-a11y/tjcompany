@@ -562,3 +562,37 @@ hr.sep{border:0; border-top:1px solid rgba(255,255,255,.08); margin:18px 0}
 .brand img{filter: drop-shadow(0 0 10px rgba(255,255,255,.12));}
 .lightbox{display:none !important;}
 .lightbox.open{display:flex !important;}
+
+
+/* ===== v20: Lookbook swipe one-by-one ===== */
+.lookbook .sliderTrack{
+  overflow:auto !important;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  gap:0 !important;
+  padding:0 !important;
+}
+.lookbook [data-slide], .lookbook .slide{
+  flex:0 0 100% !important;
+  scroll-snap-align:start;
+}
+.lookbook .sliderBtn{display:none !important;} /* swipe-first UI */
+.lookbook .dots{display:flex !important;}
+
+/* ===== v20: Production readability ===== */
+.card.keyInfo .lead, .keyInfoBody, .keyInfo{
+  color: rgba(10,16,28,.78);
+  font-size:14px;
+  line-height:1.75;
+}
+.keyInfo strong, .keyInfo b{color:rgba(10,16,28,.92)}
+.keyInfo a{color:rgba(31,111,255,.92)}
+/* bullets look */
+.keyInfoLines{display:grid; gap:6px}
+.pills{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
+.pill{
+  display:inline-flex; padding:6px 10px; border-radius:999px;
+  border:1px solid rgba(10,16,28,.12);
+  background:rgba(255,255,255,.92);
+  font-size:12px; font-weight:700; color:rgba(10,16,28,.74);
+}
