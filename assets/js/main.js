@@ -220,63 +220,23 @@
 })();
 
 
-/* ===== v13: fix nav lag (lightbox) + safer close ===== */
+/* ===== v14: ensure slider arrows work (lookbook) ===== */
 (function(){
-  if(window.__TJ_LIGHTBOX_V13) return;
-  window.__TJ_LIGHTBOX_V13 = true;
+  document.querySelectorAll('.lookbook').forEach(slider=>{
+    const track = slider.querySelector('[data-track], .sliderTrack');
+    const prev = slider.querySelector('[data-prev]');
+    const next = slider.querySelector('[data-next]');
+    if(!track || !prev || !next) return;
 
-  const lb = document.querySelector('[data-lightbox]');
-  if(!lb) return;
-  const img = lb.querySelector('img');
-  const closeBtn = lb.querySelector('[data-lightbox-close]');
+    const page = ()=>slider.clientWidth;
 
-  function lockScroll(on){
-    document.documentElement.style.overflow = on ? 'hidden' : '';
-    document.body.style.overflow = on ? 'hidden' : '';
-  }
-
-  function open(src, alt){
-    if(!img) return;
-    img.src = src;
-    img.alt = alt || '';
-    lb.classList.add('open');
-    lockScroll(true);
-  }
-
-  function close(){
-    lb.classList.remove('open');
-    lockScroll(false);
-    setTimeout(()=>{ if(img) img.src=''; }, 120);
-  }
-
-  // capture-phase delegation to avoid conflicts
-  document.addEventListener('click', (e)=>{
-    const opener = e.target.closest('[data-open-lightbox]');
-    if(opener){
+    prev.addEventListener('click', (e)=>{
       e.preventDefault();
-      const src = opener.getAttribute('data-src') || opener.getAttribute('href');
-      const alt = opener.getAttribute('data-alt') || opener.getAttribute('aria-label') || '';
-      open(src, alt);
-      return;
-    }
-    if(lb.classList.contains('open') && e.target === lb){
+      track.scrollBy({left: -page(), behavior:'smooth'});
+    });
+    next.addEventListener('click', (e)=>{
       e.preventDefault();
-      close();
-      return;
-    }
-  }, true);
-
-  if(closeBtn){
-    closeBtn.addEventListener('click', (e)=>{
-      e.preventDefault();
-      e.stopPropagation();
-      close();
-    }, true);
-  }
-
-  document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape' && lb.classList.contains('open')) close();
+      track.scrollBy({left:  page(), behavior:'smooth'});
+    });
   });
-
-  window.addEventListener('hashchange', ()=>lockScroll(false));
 })();
