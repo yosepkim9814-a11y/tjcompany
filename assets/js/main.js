@@ -317,3 +317,33 @@
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && lb.classList.contains('open')) close(); });
   window.addEventListener('hashchange', ()=>lock(false));
 })();
+
+
+/* ===== v17: force unlock navigation on production ===== */
+(function(){
+  function unlock(){
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+    const lb = document.querySelector('[data-lightbox]');
+    if(lb) lb.classList.remove('open');
+  }
+  window.addEventListener('pageshow', unlock);
+  document.addEventListener('DOMContentLoaded', unlock);
+
+  // If some invisible element covers the header, make it non-interactive.
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const header = document.querySelector('.header');
+    if(!header) return;
+    const r = header.getBoundingClientRect();
+    const x = Math.min(window.innerWidth-5, Math.max(5, r.left + 40));
+    const y = Math.min(window.innerHeight-5, Math.max(5, r.top + 20));
+    const el = document.elementFromPoint(x, y);
+    if(el && !header.contains(el)){
+      // don't break legitimate header overlays; only if it's a big fixed layer
+      const st = window.getComputedStyle(el);
+      if(st.position === 'fixed' && parseInt(st.zIndex || '0',10) >= 1000){
+        el.style.pointerEvents = 'none';
+      }
+    }
+  });
+})();
