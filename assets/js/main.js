@@ -347,3 +347,29 @@
     }
   });
 })();
+
+/* ===== v18 nav unblocker: remove invisible overlay that eats clicks ===== */
+(function(){
+  function unblock(){
+    const header = document.querySelector('.header');
+    if(!header) return;
+    const y = 22;
+    const xs = [60, 220, 420, 620, 820, 980, 1120].map(x=>Math.min(window.innerWidth-5, x));
+    xs.forEach(x=>{
+      const el = document.elementFromPoint(x, y);
+      if(!el) return;
+      if(header.contains(el)) return;
+      const st = window.getComputedStyle(el);
+      const r = el.getBoundingClientRect();
+      const big = (r.width > window.innerWidth*0.6 && r.height > 40);
+      const fixedish = (st.position === 'fixed' || st.position === 'absolute');
+      if(fixedish && big){
+        el.style.pointerEvents = 'none';
+      }
+    });
+  }
+  window.addEventListener('DOMContentLoaded', unblock);
+  window.addEventListener('load', unblock);
+  window.addEventListener('resize', unblock);
+  document.addEventListener('click', ()=>setTimeout(unblock, 0), true);
+})();
