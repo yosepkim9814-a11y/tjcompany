@@ -136,26 +136,5 @@ Location: Ho Chi Minh City, Vietnam</div></div><div class="card" style="padding:
 </div>
 </div>
 <script src="assets/js/main.js"></script>
-<script>
-// v13 quicktabs: smooth scroll + unlock scroll
-(function(){
-  const links = document.querySelectorAll('a[href^="#etbj"],a[href^="#jb"],a[href^="#kimsun"],a[href^="#hq"]');
-  if(!links.length) return;
-  links.forEach(a=>{
-    a.addEventListener('click', (e)=>{
-      const id = a.getAttribute('href');
-      const el = document.querySelector(id);
-      if(el){
-        e.preventDefault();
-        document.documentElement.style.overflow = '';
-        document.body.style.overflow = '';
-        el.scrollIntoView({behavior:'smooth', block:'start'});
-        history.replaceState(null,'',id);
-      }
-    });
-  });
-})();
-</script>
-<!-- v13 quicktabs -->
 </body>
 </html>
