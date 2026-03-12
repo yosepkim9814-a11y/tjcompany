@@ -63,10 +63,10 @@
           <a href="contact.html"><span class="nav-en">Contact</span><span class="nav-ko">문의</span></a>
       </nav>
 
-      <button class="menuBtn" type="button" data-menu-btn aria-label="Open menu">Menu</button>
+      <div class="langSwitch"><button class="langBtn active" type="button" data-lang-btn="ko">KR</button><button class="langBtn" type="button" data-lang-btn="en">EN</button></div><button class="menuBtn" type="button" data-menu-btn aria-label="Open menu">Menu</button>
     </div>
 
-    <div class="mobileNav" data-mobile-nav data-nav>
+    <div class="mobileLang"><button class="langBtn active" type="button" data-lang-btn="ko">KR</button><button class="langBtn" type="button" data-lang-btn="en">EN</button></div><div class="mobileNav" data-mobile-nav data-nav>
         <a href="index.html"><span class="nav-en">Home</span><span class="nav-ko">홈</span></a>
         <a href="about.html" class="active"><span class="nav-en">About</span><span class="nav-ko">회사소개</span></a>
         <a href="products.html"><span class="nav-en">Products</span><span class="nav-ko">제품</span></a>
@@ -77,129 +77,7 @@
   </div>
 </header>
 
-<section class="pageHero">
-  <div class="container">
-    <span class="sectionLabel">ABOUT TJ COMPANY</span>
-    <h1>We build denim with purpose.</h1>
-    <p>
-      TJ COMPANY는 데님 전문 제조 파트너로서 한국 본사의 커뮤니케이션 역량과
-      해외 생산 네트워크를 연결해, 브랜드가 원하는 퀄리티와 일정에 맞는 결과물을 만듭니다.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="infoGrid">
-      <article class="infoCard">
-        <span class="cardLabel">Company Profile</span>
-        <h2>TJ COMPANY</h2>
-        <dl class="infoList">
-          <div><dt>대표이사</dt><dd>이태희</dd></div>
-          <div><dt>설립일</dt><dd>2023.12.23</dd></div>
-          <div><dt>사업자등록번호</dt><dd>286-88-03405</dd></div>
-          <div><dt>본사</dt><dd>서울특별시 구로구 디지털로 26길 123 지플러스타워 812호</dd></div>
-        </dl>
-      </article>
-
-      <article class="infoCard">
-        <span class="cardLabel">Core Business</span>
-        <h2>Denim OEM & Promotion</h2>
-        <div class="pillRow">
-          <span class="pill">의류 제조</span>
-          <span class="pill">OEM 생산 서비스</span>
-          <span class="pill">글로벌 소싱 관리</span>
-          <span class="pill">품질 관리</span>
-          <span class="pill">Denim all items</span>
-          <span class="pill">Woven pants</span>
-        </div>
-        <p class="mutedBlock">
-          신규 법인이지만 고경력 인력과 장기간 운영된 생산 인프라를 기반으로,
-          프로페셔널한 품질과 납기 대응을 안정적으로 수행합니다.
-        </p>
-      </article>
-    </div>
-
-    <div class="processSection">
-      <div class="sectionIntro compact">
-        <span class="sectionLabel">HOW WE WORK</span>
-        <h2>프로젝트를 끊기지 않게 연결하는 운영 방식</h2>
-      </div>
-
-      <div class="processGrid">
-        <article class="processCard"><strong>01</strong><h3>Direction</h3><p>브랜드 요구사항과 시즌 방향성을 정리합니다.</p></article>
-        <article class="processCard"><strong>02</strong><h3>Sourcing</h3><p>원단, 워싱, 부자재 사양을 생산 가능한 구조로 정리합니다.</p></article>
-        <article class="processCard"><strong>03</strong><h3>Sample</h3><p>샘플 개발과 피드백 반영을 통해 완성도를 끌어올립니다.</p></article>
-        <article class="processCard"><strong>04</strong><h3>Bulk Production</h3><p>파트너 공장과 일정, 품질 기준을 맞춰 양산을 진행합니다.</p></article>
-        <article class="processCard"><strong>05</strong><h3>QC & Delivery</h3><p>납기와 품질을 함께 점검하며 최종 출고까지 관리합니다.</p></article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section sectionMuted">
-  <div class="container">
-    <div class="sectionIntro compact">
-      <span class="sectionLabel">OFFICE & SHOWROOM</span>
-      <h2>본사 기반의 커뮤니케이션과 샘플 검토 환경</h2>
-      <p>사무실, 쇼룸, 샘플실, 완성반 이미지를 크게 정리해 신뢰감을 높였습니다.</p>
-    </div>
-
-    <div class="galleryGrid officeGallery">
-      <a class="galleryCard galleryWide" href="assets/img/office/showroom.webp" data-open-lightbox data-src="assets/img/office/showroom.webp" data-title="Showroom">
-        <img src="assets/img/office/showroom.webp" alt="TJ COMPANY showroom" loading="lazy" decoding="async" />
-        <span>Showroom</span>
-      </a>
-      <a class="galleryCard" href="assets/img/office/entrance.webp" data-open-lightbox data-src="assets/img/office/entrance.webp" data-title="Office Entrance">
-        <img src="assets/img/office/entrance.webp" alt="TJ COMPANY office entrance" loading="lazy" decoding="async" />
-        <span>Entrance</span>
-      </a>
-      <a class="galleryCard" href="assets/img/office/office_space.webp" data-open-lightbox data-src="assets/img/office/office_space.webp" data-title="Office Space">
-        <img src="assets/img/office/office_space.webp" alt="TJ COMPANY office space" loading="lazy" decoding="async" />
-        <span>Office Space</span>
-      </a>
-      <a class="galleryCard" href="assets/img/office/sample_room.webp" data-open-lightbox data-src="assets/img/office/sample_room.webp" data-title="Sample Room">
-        <img src="assets/img/office/sample_room.webp" alt="TJ COMPANY sample room" loading="lazy" decoding="async" />
-        <span>Sample Room</span>
-      </a>
-      <a class="galleryCard" href="assets/img/office/finishing_room.webp" data-open-lightbox data-src="assets/img/office/finishing_room.webp" data-title="Finishing Room">
-        <img src="assets/img/office/finishing_room.webp" alt="TJ COMPANY finishing room" loading="lazy" decoding="async" />
-        <span>Finishing Room</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="sectionIntro compact">
-      <span class="sectionLabel">ORGANIZATION</span>
-      <h2>역할 중심으로 명확하게 나눈 운영 조직</h2>
-      <p>초기 상담부터 최종 납품까지, 전 공정이 끊기지 않도록 역할 중심으로 운영합니다.</p>
-    </div>
-
-    <div class="orgGrid">
-      <article class="orgCard featured">
-        <h3>대표이사</h3>
-        <p>Project Direction · Client Communication</p>
-      </article>
-      <article class="orgCard">
-        <h3>의류 사업부</h3>
-        <p>Denim Team · Woven Team</p>
-      </article>
-      <article class="orgCard">
-        <h3>해외 생산부</h3>
-        <p>China Branch · Vietnam Branch</p>
-      </article>
-      <article class="orgCard">
-        <h3>경영 지원부</h3>
-        <p>Finance · HR/GA · Trade</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<footer class="siteFooter">
+<section class="pageHero videoHero"><video autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/video/hero.mp4" type="video/mp4" /></video><div class="container"><span class="sectionLabel">ABOUT</span><h1><span class="i18n-ko">서울 본사 공간을 더 정돈된 방식으로</span><span class="i18n-en">A more refined way to present the Seoul head office</span></h1><p><span class="i18n-ko">사무실 사진을 작은 썸네일 그리드로 통일하고, 클릭하면 크게 볼 수 있도록 구성했습니다.</span><span class="i18n-en">The office gallery is rebuilt as a clean thumbnail grid with click-to-enlarge viewing.</span></p></div></section><section class="section"><div class="container"><div class="sectionIntro compact"><span class="sectionLabel">HEAD OFFICE</span><h2><span class="i18n-ko">본사 · 쇼룸 · 샘플룸</span><span class="i18n-en">Head office · showroom · sample room</span></h2></div><div class="officeGrid"><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/showroom.webp" data-title="Showroom"><img src="assets/img/office/showroom.webp" alt="Showroom" /><span class="cap">Showroom</span></button></article><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/sample_room.webp" data-title="Sample room"><img src="assets/img/office/sample_room.webp" alt="Sample room" /><span class="cap">Sample room</span></button></article><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/office_space.webp" data-title="Office space"><img src="assets/img/office/office_space.webp" alt="Office space" /><span class="cap">Office space</span></button></article><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/entrance.webp" data-title="Entrance"><img src="assets/img/office/entrance.webp" alt="Entrance" /><span class="cap">Entrance</span></button></article><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/office_poster.webp" data-title="Office poster"><img src="assets/img/office/office_poster.webp" alt="Office poster" /><span class="cap">Office poster</span></button></article><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/finishing_room.webp" data-title="Finishing room"><img src="assets/img/office/finishing_room.webp" alt="Finishing room" /><span class="cap">Finishing room</span></button></article></div></div></section><section class="section sectionMuted"><div class="container"><div class="overviewGrid"><article class="featureCard"><h3>Curated first impression</h3><p>본사 사진의 프레임과 크기를 통일해 전체 화면 인상이 정돈되도록 조정했습니다.</p></article><article class="featureCard"><h3>Click to enlarge</h3><p>작은 썸네일을 클릭하면 큰 사진으로 상세 확인이 가능합니다.</p></article><article class="featureCard"><h3>Same black visual tone</h3><p>메인 페이지와 연결되는 블랙 베이스 분위기로 통일했습니다.</p></article></div></div></section><footer class="siteFooter">
   <div class="container">
     <div class="footerTop">
       <div>
