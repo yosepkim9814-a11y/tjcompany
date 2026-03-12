@@ -63,10 +63,10 @@
           <a href="contact.html"><span class="nav-en">Contact</span><span class="nav-ko">문의</span></a>
       </nav>
 
-      <button class="menuBtn" type="button" data-menu-btn aria-label="Open menu">Menu</button>
+      <div class="langSwitch"><button class="langBtn active" type="button" data-lang-btn="ko">KR</button><button class="langBtn" type="button" data-lang-btn="en">EN</button></div><button class="menuBtn" type="button" data-menu-btn aria-label="Open menu">Menu</button>
     </div>
 
-    <div class="mobileNav" data-mobile-nav data-nav>
+    <div class="mobileLang"><button class="langBtn active" type="button" data-lang-btn="ko">KR</button><button class="langBtn" type="button" data-lang-btn="en">EN</button></div><div class="mobileNav" data-mobile-nav data-nav>
         <a href="index.html"><span class="nav-en">Home</span><span class="nav-ko">홈</span></a>
         <a href="about.html"><span class="nav-en">About</span><span class="nav-ko">회사소개</span></a>
         <a href="products.html" class="active"><span class="nav-en">Products</span><span class="nav-ko">제품</span></a>
@@ -77,157 +77,30 @@
   </div>
 </header>
 
-<section class="pageHero">
+<section class="pageHero videoHero">
+  <video autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/video/hero.mp4" type="video/mp4" /></video>
   <div class="container">
     <span class="sectionLabel">PRODUCTS</span>
-    <h1>Lookbook & development range</h1>
-    <p>
-      데님 전 품목과 우븐 팬츠까지, 브랜드 톤에 맞춘 실루엣·워싱·부자재 사양을 제안하고
-      개발부터 양산까지 연결합니다.
-    </p>
+    <h1><span class="i18n-ko">제품 라인업을 더 선명하게</span><span class="i18n-en">A sharper way to present the line-up</span></h1>
+    <p><span class="i18n-ko">제품 사진을 한 장씩 넘겨보는 슬라이드 룩북 형식으로 바꾸어, 아이템별 인상이 분명하고 이미지 크기도 통일되도록 구성했습니다.</span><span class="i18n-en">The products are rebuilt as a one-by-one slide lookbook so each item feels clearer, cleaner, and more premium.</span></p>
   </div>
 </section>
-
 <section class="section">
   <div class="container">
-    <div class="productGrid">
-      <article class="productCard">
-        <div class="productVisual">
-          <picture>
-            <source srcset="assets/img/products/prod_pants_light.webp" type="image/webp" />
-            <img src="assets/img/products/prod_pants_light.png" alt="Denim Pants Light" loading="lazy" decoding="async" />
-          </picture>
-        </div>
-        <div class="productBody">
-          <span class="cardLabel">Pants</span>
-          <h2>Denim Pants · Light</h2>
-          <p>클린한 라이트 워싱과 시즌 기본핏부터 트렌디한 실루엣까지 대응 가능한 메인 카테고리.</p>
-          <div class="pillRow">
-            <span class="pill">Light wash</span>
-            <span class="pill">Core fit</span>
-            <span class="pill">Seasonal update</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="productCard">
-        <div class="productVisual">
-          <picture>
-            <source srcset="assets/img/products/prod_pants_wide.webp" type="image/webp" />
-            <img src="assets/img/products/prod_pants_wide.png" alt="Denim Pants Wide" loading="lazy" decoding="async" />
-          </picture>
-        </div>
-        <div class="productBody">
-          <span class="cardLabel">Pants</span>
-          <h2>Denim Pants · Wide</h2>
-          <p>와이드 실루엣과 가공, 디테일 변형이 용이해 브랜드 무드를 강하게 표현할 수 있는 아이템.</p>
-          <div class="pillRow">
-            <span class="pill">Wide fit</span>
-            <span class="pill">Wash option</span>
-            <span class="pill">Detail custom</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="productCard">
-        <div class="productVisual">
-          <picture>
-            <source srcset="assets/img/products/prod_jacket_black.webp" type="image/webp" />
-            <img src="assets/img/products/prod_jacket_black.png" alt="Denim Jacket Black" loading="lazy" decoding="async" />
-          </picture>
-        </div>
-        <div class="productBody">
-          <span class="cardLabel">Jacket</span>
-          <h2>Denim Jacket · Black</h2>
-          <p>다크톤 무드의 데님 아우터로, 스티치와 부자재, 봉제 사양 조정에 강점이 있습니다.</p>
-          <div class="pillRow">
-            <span class="pill">Outerwear</span>
-            <span class="pill">Trim control</span>
-            <span class="pill">Dark tone</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="productCard">
-        <div class="productVisual">
-          <picture>
-            <source srcset="assets/img/products/prod_shirt_model.webp" type="image/webp" />
-            <img src="assets/img/products/prod_shirt_model.png" alt="Denim Shirt Casual" loading="lazy" decoding="async" />
-          </picture>
-        </div>
-        <div class="productBody">
-          <span class="cardLabel">Shirt</span>
-          <h2>Denim Shirt · Casual</h2>
-          <p>데일리 캐주얼 셔츠 라인으로 원단감, 워싱 레벨, 칼라 디자인 선택 폭이 넓습니다.</p>
-          <div class="pillRow">
-            <span class="pill">Casual line</span>
-            <span class="pill">Fabric choice</span>
-            <span class="pill">Set-up ready</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="productCard">
-        <div class="productVisual">
-          <picture>
-            <source srcset="assets/img/products/prod_shirt_flat.webp" type="image/webp" />
-            <img src="assets/img/products/prod_shirt_flat.png" alt="Denim Shirt Western" loading="lazy" decoding="async" />
-          </picture>
-        </div>
-        <div class="productBody">
-          <span class="cardLabel">Shirt</span>
-          <h2>Denim Shirt · Western</h2>
-          <p>웨스턴 포켓, 요크, 스티치 등 디테일 변형에 적합한 셔츠형 데님 아이템.</p>
-          <div class="pillRow">
-            <span class="pill">Western mood</span>
-            <span class="pill">Pocket detail</span>
-            <span class="pill">Design variation</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="productCard">
-        <div class="productVisual">
-          <picture>
-            <source srcset="assets/img/products/prod_shirt_light.webp" type="image/webp" />
-            <img src="assets/img/products/prod_shirt_light.png" alt="Denim Shirt Light" loading="lazy" decoding="async" />
-          </picture>
-        </div>
-        <div class="productBody">
-          <span class="cardLabel">Shirt</span>
-          <h2>Denim Shirt · Light</h2>
-          <p>연청 톤과 부드러운 터치가 특징이며, 단품은 물론 셋업 제안에도 적합합니다.</p>
-          <div class="pillRow">
-            <span class="pill">Light tone</span>
-            <span class="pill">Soft touch</span>
-            <span class="pill">Set-up line</span>
-          </div>
-        </div>
-      </article>
+    <div class="productSlider" data-slider>
+      <div class="productTrack" data-slider-track>
+        <article class="slideCard" data-slide><div class="slideVisual"><img src="assets/img/products/prod_pants_light.png" alt="Light denim pants" /></div><div class="slideMeta"><span class="cardLabel">PANTS</span><h2>Denim Pants · Light</h2><p><span class="i18n-ko">기본 물빠짐 톤과 안정적인 핏 제안에 강한 메인 카테고리입니다. 시즌 베스트셀러형 제품을 가장 직관적으로 보여줄 수 있습니다.</span><span class="i18n-en">A core denim category ideal for showing clean washes, commercial fits, and stable season essentials.</span></p><div class="pillRow"><span class="pill">Light wash</span><span class="pill">Core fit</span><span class="pill">Best seller</span></div></div></article>
+        <article class="slideCard" data-slide><div class="slideVisual"><img src="assets/img/products/prod_pants_wide.png" alt="Wide denim pants" /></div><div class="slideMeta"><span class="cardLabel">PANTS</span><h2>Denim Pants · Wide</h2><p><span class="i18n-ko">와이드 핏과 트렌디한 밸런스를 강조할 수 있는 아이템으로, 브랜드 무드를 보여주기 좋은 스타일입니다.</span><span class="i18n-en">A trend-led wide-leg item that helps express a stronger brand point of view.</span></p><div class="pillRow"><span class="pill">Wide fit</span><span class="pill">Trend item</span><span class="pill">Wash option</span></div></div></article>
+        <article class="slideCard" data-slide><div class="slideVisual"><img src="assets/img/products/prod_jacket_black.png" alt="Black denim jacket" /></div><div class="slideMeta"><span class="cardLabel">JACKET</span><h2>Denim Jacket · Black</h2><p><span class="i18n-ko">다크 데님 아우터는 스티치와 부자재 디테일 차이가 잘 보여서 프리미엄 이미지 연출에 적합합니다.</span><span class="i18n-en">A dark denim outerwear style with strong trim and stitch visibility for a premium presentation.</span></p><div class="pillRow"><span class="pill">Outerwear</span><span class="pill">Trim detail</span><span class="pill">Dark tone</span></div></div></article>
+        <article class="slideCard" data-slide><div class="slideVisual"><img src="assets/img/products/prod_shirt_model.png" alt="Denim shirt model" /></div><div class="slideMeta"><span class="cardLabel">SHIRT</span><h2>Denim Shirt · Casual</h2><p><span class="i18n-ko">캐주얼 데님 셔츠군은 단품과 셋업 제안 모두 가능해, 스타일 확장성이 큰 카테고리입니다.</span><span class="i18n-en">A flexible shirt category suitable for standalone styling as well as set-up proposals.</span></p><div class="pillRow"><span class="pill">Casual line</span><span class="pill">Flexible styling</span><span class="pill">Set-up</span></div></div></article>
+        <article class="slideCard" data-slide><div class="slideVisual"><img src="assets/img/products/prod_shirt_flat.png" alt="Western denim shirt" /></div><div class="slideMeta"><span class="cardLabel">SHIRT</span><h2>Denim Shirt · Western</h2><p><span class="i18n-ko">웨스턴 디테일 변형이 쉬워 디자인 방향성을 직관적으로 보여주는 데 적합합니다.</span><span class="i18n-en">An ideal denim shirt for showcasing western details and design variations.</span></p><div class="pillRow"><span class="pill">Western mood</span><span class="pill">Pocket detail</span><span class="pill">Design variation</span></div></div></article>
+        <article class="slideCard" data-slide><div class="slideVisual"><img src="assets/img/products/prod_shirt_light.png" alt="Light denim shirt" /></div><div class="slideMeta"><span class="cardLabel">SHIRT</span><h2>Denim Shirt · Light</h2><p><span class="i18n-ko">연청 셔츠류는 부드러운 인상과 시즌감이 잘 보여서 메인 비주얼용 제품군으로도 좋습니다.</span><span class="i18n-en">A light denim shirt that feels soft, seasonal, and visually clean for main lookbook use.</span></p><div class="pillRow"><span class="pill">Light tone</span><span class="pill">Soft touch</span><span class="pill">Seasonal</span></div></div></article>
+      </div>
+      <div class="sliderControls"><div class="sliderButtons"><button class="sliderBtn" type="button" data-prev>‹</button><button class="sliderBtn" type="button" data-next>›</button></div><div class="sliderDots" data-slider-dots></div></div>
     </div>
   </div>
 </section>
-
-<section class="section sectionMuted">
-  <div class="container">
-    <div class="sectionIntro compact">
-      <span class="sectionLabel">DEVELOPMENT POINT</span>
-      <h2>단순한 샘플 나열이 아니라 개발 역량이 보이도록 구성</h2>
-      <p>현재 제품 이미지를 유지하면서도 바이어가 바로 이해할 수 있게 개발 포인트를 정리했습니다.</p>
-    </div>
-
-    <div class="overviewGrid">
-      <article class="featureCard"><h3>Denim All Items</h3><p>팬츠, 재킷, 셔츠, 스커트 등 데님 전 카테고리 대응.</p></article>
-      <article class="featureCard"><h3>Woven Pants</h3><p>면/우븐 팬츠 라인까지 확장 가능한 생산 구조.</p></article>
-      <article class="featureCard"><h3>Customization</h3><p>워싱, 가공, 부자재, 핏 사양 커스터마이징 지원.</p></article>
-      <article class="featureCard"><h3>Sample Review</h3><p>서울 본사 기반 샘플 검토와 빠른 피드백 운영.</p></article>
-      <article class="featureCard"><h3>Bulk Execution</h3><p>제조 파트너와 연계한 안정적 양산 운영.</p></article>
-      <article class="featureCard"><h3>QC Control</h3><p>품질 기준과 납기 관리를 전 공정에서 체크.</p></article>
-    </div>
-  </div>
-</section>
-
-<footer class="siteFooter">
+<section class="section sectionMuted"><div class="container"><div class="sectionIntro compact"><span class="sectionLabel">PRESENTATION UPDATE</span><h2><span class="i18n-ko">제품 페이지에서 바뀐 핵심</span><span class="i18n-en">What changed on the products page</span></h2><p><span class="i18n-ko">여러 장을 한 번에 보여주던 방식 대신, 한 제품에 집중되는 구조로 바꾸어 고급스럽고 정리된 인상을 강화했습니다.</span><span class="i18n-en">Instead of showing many items at once, each slide now gives one product a cleaner and more premium stage.</span></p></div><div class="overviewGrid"><article class="featureCard"><h3>One item at a time</h3><p>한 장씩 넘기며 보는 룩북 구조로 집중도 향상.</p></article><article class="featureCard"><h3>Unified image size</h3><p>제품 이미지 비율과 여백을 정리해 통일감 강화.</p></article><article class="featureCard"><h3>Premium black mood</h3><p>첫 페이지와 톤을 맞춘 블랙 베이스 템플릿 적용.</p></article></div></div></section><footer class="siteFooter">
   <div class="container">
     <div class="footerTop">
       <div>
