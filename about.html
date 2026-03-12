@@ -1,30 +1,42 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | TJ COMPANY</title>
-  <meta name="description" content="TJ COMPANY의 회사 소개, 핵심 사업, 조직 구성, 사무실·쇼룸 환경을 확인할 수 있습니다." />
-  <meta name="keywords" content="TJ COMPANY,TJ Company,데님 OEM,데님 프로모션,의류 제조,글로벌 생산,베트남 생산,데님 생산,OEM manufacturer,denim manufacturer" />
-  <meta name="author" content="TJ COMPANY" />
-  <link rel="canonical" href="https://www.tjcompany.co.kr/about.html" />
-  <meta name="theme-color" content="#0b1325" />
-  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <!doctype html>
+    <html lang="ko" data-lang="ko">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>About | TJ COMPANY</title>
+      <meta name="description" content="TJ COMPANY의 회사 소개, 핵심 사업, 조직 구성, 본사·쇼룸 환경을 확인할 수 있습니다." />
+      <meta name="keywords" content="TJ COMPANY,TJ Company,데님 OEM,데님 프로모션,의류 제조,글로벌 생산,베트남 생산,데님 생산,OEM manufacturer,denim manufacturer" />
+      <meta name="author" content="TJ COMPANY" />
+      <link rel="canonical" href="https://www.tjcompany.co.kr/about.html" />
+      <meta name="theme-color" content="#06070b" />
+      <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+      <script>
+        (function() {
+          try {
+            var lang = localStorage.getItem('tj-lang') || 'ko';
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'ko');
+          } catch (e) {
+            document.documentElement.setAttribute('data-lang', 'ko');
+            document.documentElement.setAttribute('lang', 'ko');
+          }
+        })();
+      </script>
+      <link rel="stylesheet" href="assets/css/style.css" />
 
-  <meta property="og:site_name" content="TJ COMPANY" />
-  <meta property="og:title" content="About | TJ COMPANY" />
-  <meta property="og:description" content="TJ COMPANY의 회사 소개, 핵심 사업, 조직 구성, 사무실·쇼룸 환경을 확인할 수 있습니다." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.tjcompany.co.kr/about.html" />
-  <meta property="og:image" content="https://www.tjcompany.co.kr/assets/img/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About | TJ COMPANY" />
-  <meta name="twitter:description" content="TJ COMPANY의 회사 소개, 핵심 사업, 조직 구성, 사무실·쇼룸 환경을 확인할 수 있습니다." />
-  <meta name="twitter:image" content="https://www.tjcompany.co.kr/assets/img/og-image.jpg" />
+      <meta property="og:site_name" content="TJ COMPANY" />
+      <meta property="og:title" content="About | TJ COMPANY" />
+      <meta property="og:description" content="TJ COMPANY의 회사 소개, 핵심 사업, 조직 구성, 본사·쇼룸 환경을 확인할 수 있습니다." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.tjcompany.co.kr/about.html" />
+      <meta property="og:image" content="https://www.tjcompany.co.kr/assets/img/og-image.jpg" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="About | TJ COMPANY" />
+      <meta name="twitter:description" content="TJ COMPANY의 회사 소개, 핵심 사업, 조직 구성, 본사·쇼룸 환경을 확인할 수 있습니다." />
+      <meta name="twitter:image" content="https://www.tjcompany.co.kr/assets/img/og-image.jpg" />
 
-  <script type="application/ld+json">
-{
+      <script type="application/ld+json">
+    {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "TJ COMPANY",
@@ -40,9 +52,9 @@
     "addressCountry": "KR"
   }
 }
-  </script>
-</head>
-<body>
+      </script>
+    </head>
+    <body>
 <header class="siteHeader" id="top">
   <div class="container">
     <div class="navbar">
@@ -50,40 +62,190 @@
         <img src="assets/img/tj-logo.png" alt="TJ COMPANY logo" />
         <div class="brandText">
           <strong>TJ COMPANY</strong>
-          <span>Denim OEM / Promotion</span>
+          <span><span class="i18n-ko">데님 OEM / 프로모션</span><span class="i18n-en">Denim OEM / Promotion</span></span>
         </div>
       </a>
 
       <nav class="nav" data-nav>
           <a href="index.html"><span class="nav-en">Home</span><span class="nav-ko">홈</span></a>
-          <a href="about.html" class="active"><span class="nav-en">About</span><span class="nav-ko">회사소개</span></a>
-          <a href="products.html"><span class="nav-en">Products</span><span class="nav-ko">제품</span></a>
-          <a href="production.html"><span class="nav-en">Production</span><span class="nav-ko">생산 네트워크</span></a>
-          <a href="partners.html"><span class="nav-en">Partners</span><span class="nav-ko">파트너</span></a>
-          <a href="contact.html"><span class="nav-en">Contact</span><span class="nav-ko">문의</span></a>
+      <a href="about.html" class="active"><span class="nav-en">About</span><span class="nav-ko">회사소개</span></a>
+      <a href="products.html"><span class="nav-en">Products</span><span class="nav-ko">제품</span></a>
+      <a href="production.html"><span class="nav-en">Production</span><span class="nav-ko">생산 네트워크</span></a>
+      <a href="partners.html"><span class="nav-en">Partners</span><span class="nav-ko">파트너</span></a>
+      <a href="contact.html"><span class="nav-en">Contact</span><span class="nav-ko">문의</span></a>
       </nav>
 
-      <div class="langSwitch"><button class="langBtn active" type="button" data-lang-btn="ko">KR</button><button class="langBtn" type="button" data-lang-btn="en">EN</button></div><button class="menuBtn" type="button" data-menu-btn aria-label="Open menu">Menu</button>
+      <div class="langSwitch">
+        <button class="langBtn active" type="button" data-lang-btn="ko">KR</button>
+        <button class="langBtn" type="button" data-lang-btn="en">EN</button>
+      </div>
+      <button class="menuBtn" type="button" data-menu-btn aria-label="Open menu">Menu</button>
     </div>
 
-    <div class="mobileLang"><button class="langBtn active" type="button" data-lang-btn="ko">KR</button><button class="langBtn" type="button" data-lang-btn="en">EN</button></div><div class="mobileNav" data-mobile-nav data-nav>
+    <div class="mobileLang">
+      <button class="langBtn active" type="button" data-lang-btn="ko">KR</button>
+      <button class="langBtn" type="button" data-lang-btn="en">EN</button>
+    </div>
+    <div class="mobileNav" data-mobile-nav data-nav>
         <a href="index.html"><span class="nav-en">Home</span><span class="nav-ko">홈</span></a>
-        <a href="about.html" class="active"><span class="nav-en">About</span><span class="nav-ko">회사소개</span></a>
-        <a href="products.html"><span class="nav-en">Products</span><span class="nav-ko">제품</span></a>
-        <a href="production.html"><span class="nav-en">Production</span><span class="nav-ko">생산 네트워크</span></a>
-        <a href="partners.html"><span class="nav-en">Partners</span><span class="nav-ko">파트너</span></a>
-        <a href="contact.html"><span class="nav-en">Contact</span><span class="nav-ko">문의</span></a>
+    <a href="about.html" class="active"><span class="nav-en">About</span><span class="nav-ko">회사소개</span></a>
+    <a href="products.html"><span class="nav-en">Products</span><span class="nav-ko">제품</span></a>
+    <a href="production.html"><span class="nav-en">Production</span><span class="nav-ko">생산 네트워크</span></a>
+    <a href="partners.html"><span class="nav-en">Partners</span><span class="nav-ko">파트너</span></a>
+    <a href="contact.html"><span class="nav-en">Contact</span><span class="nav-ko">문의</span></a>
     </div>
   </div>
 </header>
+<section class="pageHero darkHero">
+  <div class="container">
+    <span class="sectionLabel">ABOUT</span>
+    <h1><span><span class="i18n-ko">브랜드와 생산을 연결하는<br>데님 전문 파트너</span><span class="i18n-en">A denim manufacturing partner<br>connecting brands and production.</span></span></h1>
+    <p><span><span class="i18n-ko">TJ COMPANY는 데님 전문 제조 파트너로, 한국·중국·베트남 네트워크 기반의 글로벌 생산 운영과 품질 관리로 브랜드의 성장을 지원합니다.</span><span class="i18n-en">TJ COMPANY is a denim-focused manufacturing partner supporting brand growth through global production operation and quality control based on a Korea, China, and Vietnam network.</span></span></p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="infoGrid">
+      <article class="infoCard">
+        <span class="cardLabel"><span><span class="i18n-ko">회사 정보</span><span class="i18n-en">Company info</span></span></span>
+        <h2><span><span class="i18n-ko">본사 기준 운영 정보</span><span class="i18n-en">Head office information</span></span></h2>
+        <dl class="infoList">
+          <div>
+            <dt><span><span class="i18n-ko">대표이사</span><span class="i18n-en">CEO</span></span></dt>
+            <dd><span><span class="i18n-ko">이태희</span><span class="i18n-en">Taehee Lee</span></span></dd>
+          </div>
+          <div>
+            <dt><span><span class="i18n-ko">설립일</span><span class="i18n-en">Established</span></span></dt>
+            <dd>2023.12.23</dd>
+          </div>
+          <div>
+            <dt><span><span class="i18n-ko">사업자등록번호</span><span class="i18n-en">Business registration</span></span></dt>
+            <dd>286-88-03405</dd>
+          </div>
+          <div>
+            <dt><span><span class="i18n-ko">본사</span><span class="i18n-en">Head office</span></span></dt>
+            <dd><span><span class="i18n-ko">서울특별시 구로구 디지털로 26길 123 지플러스타워 812호</span><span class="i18n-en">812, Gplus Tower, 123 Digital-ro 26-gil, Guro-gu, Seoul</span></span></dd>
+          </div>
+        </dl>
+      </article>
 
-<section class="pageHero videoHero"><video autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/video/hero.mp4" type="video/mp4" /></video><div class="container"><span class="sectionLabel">ABOUT</span><h1><span class="i18n-ko">서울 본사 공간을 더 정돈된 방식으로</span><span class="i18n-en">A more refined way to present the Seoul head office</span></h1><p><span class="i18n-ko">사무실 사진을 작은 썸네일 그리드로 통일하고, 클릭하면 크게 볼 수 있도록 구성했습니다.</span><span class="i18n-en">The office gallery is rebuilt as a clean thumbnail grid with click-to-enlarge viewing.</span></p></div></section><section class="section"><div class="container"><div class="sectionIntro compact"><span class="sectionLabel">HEAD OFFICE</span><h2><span class="i18n-ko">본사 · 쇼룸 · 샘플룸</span><span class="i18n-en">Head office · showroom · sample room</span></h2></div><div class="officeGrid"><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/showroom.webp" data-title="Showroom"><img src="assets/img/office/showroom.webp" alt="Showroom" /><span class="cap">Showroom</span></button></article><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/sample_room.webp" data-title="Sample room"><img src="assets/img/office/sample_room.webp" alt="Sample room" /><span class="cap">Sample room</span></button></article><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/office_space.webp" data-title="Office space"><img src="assets/img/office/office_space.webp" alt="Office space" /><span class="cap">Office space</span></button></article><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/entrance.webp" data-title="Entrance"><img src="assets/img/office/entrance.webp" alt="Entrance" /><span class="cap">Entrance</span></button></article><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/office_poster.webp" data-title="Office poster"><img src="assets/img/office/office_poster.webp" alt="Office poster" /><span class="cap">Office poster</span></button></article><article class="officeThumb"><button type="button" data-open-lightbox data-src="assets/img/office/finishing_room.webp" data-title="Finishing room"><img src="assets/img/office/finishing_room.webp" alt="Finishing room" /><span class="cap">Finishing room</span></button></article></div></div></section><section class="section sectionMuted"><div class="container"><div class="overviewGrid"><article class="featureCard"><h3>Curated first impression</h3><p>본사 사진의 프레임과 크기를 통일해 전체 화면 인상이 정돈되도록 조정했습니다.</p></article><article class="featureCard"><h3>Click to enlarge</h3><p>작은 썸네일을 클릭하면 큰 사진으로 상세 확인이 가능합니다.</p></article><article class="featureCard"><h3>Same black visual tone</h3><p>메인 페이지와 연결되는 블랙 베이스 분위기로 통일했습니다.</p></article></div></div></section><footer class="siteFooter">
+      <article class="infoCard">
+        <span class="cardLabel"><span><span class="i18n-ko">핵심 사업</span><span class="i18n-en">Core business</span></span></span>
+        <h2><span><span class="i18n-ko">데님 중심 개발 · 생산</span><span class="i18n-en">Denim-centered development & production</span></span></h2>
+        <div class="pillRow">
+          <span class="pill"><span><span class="i18n-ko">의류 제조</span><span class="i18n-en">Garment manufacturing</span></span></span>
+          <span class="pill"><span><span class="i18n-ko">OEM 생산 서비스</span><span class="i18n-en">OEM production service</span></span></span>
+          <span class="pill"><span><span class="i18n-ko">글로벌 소싱 관리</span><span class="i18n-en">Global sourcing control</span></span></span>
+          <span class="pill"><span><span class="i18n-ko">품질 관리</span><span class="i18n-en">Quality control</span></span></span>
+        </div>
+        <p class="mutedBlock"><span><span class="i18n-ko">취급 아이템: 데님 전 품목 · 우븐 팬츠</span><span class="i18n-en">Handled items: Denim all items · Woven pants</span></span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section sectionMuted">
+  <div class="container">
+    <div class="sectionIntro compact">
+      <span class="sectionLabel">OFFICE &amp; SHOWROOM</span>
+      <h2><span><span class="i18n-ko">본사 · 쇼룸 · 샘플룸</span><span class="i18n-en">Head office · showroom · sample room</span></span></h2>
+      <p><span><span class="i18n-ko">본사에서는 바이어 미팅, 샘플 검토, 프로젝트 커뮤니케이션을 운영합니다. 사진을 누르면 크게 볼 수 있습니다.</span><span class="i18n-en">The Seoul head office is used for buyer meetings, sample review, and project communication. Click any photo to view it larger.</span></span></p>
+    </div>
+
+    <div class="officeGrid">
+      <article class="officeThumb">
+  <button type="button" data-open-lightbox data-src="assets/img/office/showroom.webp" data-title-ko="쇼룸" data-title-en="Showroom">
+    <img src="assets/img/office/showroom.webp" alt="Showroom" loading="lazy" decoding="async" />
+    <span class="cap"><span><span class="i18n-ko">쇼룸</span><span class="i18n-en">Showroom</span></span></span>
+  </button>
+</article>
+
+      <article class="officeThumb">
+  <button type="button" data-open-lightbox data-src="assets/img/office/entrance.webp" data-title-ko="사무실 입구" data-title-en="Entrance">
+    <img src="assets/img/office/entrance.webp" alt="Entrance" loading="lazy" decoding="async" />
+    <span class="cap"><span><span class="i18n-ko">사무실 입구</span><span class="i18n-en">Entrance</span></span></span>
+  </button>
+</article>
+
+      <article class="officeThumb">
+  <button type="button" data-open-lightbox data-src="assets/img/office/office_space.webp" data-title-ko="사무실 공간" data-title-en="Office space">
+    <img src="assets/img/office/office_space.webp" alt="Office space" loading="lazy" decoding="async" />
+    <span class="cap"><span><span class="i18n-ko">사무실 공간</span><span class="i18n-en">Office space</span></span></span>
+  </button>
+</article>
+
+      <article class="officeThumb">
+  <button type="button" data-open-lightbox data-src="assets/img/office/sample_room.webp" data-title-ko="샘플실" data-title-en="Sample room">
+    <img src="assets/img/office/sample_room.webp" alt="Sample room" loading="lazy" decoding="async" />
+    <span class="cap"><span><span class="i18n-ko">샘플실</span><span class="i18n-en">Sample room</span></span></span>
+  </button>
+</article>
+
+      <article class="officeThumb">
+  <button type="button" data-open-lightbox data-src="assets/img/office/finishing_room.webp" data-title-ko="완성반" data-title-en="Finishing room">
+    <img src="assets/img/office/finishing_room.webp" alt="Finishing room" loading="lazy" decoding="async" />
+    <span class="cap"><span><span class="i18n-ko">완성반</span><span class="i18n-en">Finishing room</span></span></span>
+  </button>
+</article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sectionIntro">
+      <span class="sectionLabel">ORGANIZATION</span>
+      <h2><span><span class="i18n-ko">초기 상담부터 납품까지, 역할 중심으로 운영합니다.</span><span class="i18n-en">Role-based operation from first meeting to final delivery.</span></span></h2>
+      <p><span><span class="i18n-ko">초기 상담부터 최종 납품까지 전 공정이 끊기지 않도록 본사와 해외 생산 조직이 유기적으로 연결됩니다.</span><span class="i18n-en">The head office and overseas production organization are linked closely so the full process stays connected from first consultation to final delivery.</span></span></p>
+    </div>
+
+    <div class="orgGrid">
+      <article class="orgCard featured">
+        <h3><span><span class="i18n-ko">대표이사</span><span class="i18n-en">CEO</span></span></h3>
+        <p><span><span class="i18n-ko">프로젝트 방향 설정 · 바이어 커뮤니케이션</span><span class="i18n-en">Project direction · Client communication</span></span></p>
+      </article>
+      <article class="orgCard">
+        <h3><span><span class="i18n-ko">의류 사업부</span><span class="i18n-en">Apparel division</span></span></h3>
+        <p><span><span class="i18n-ko">데님 팀 · 우븐 팀</span><span class="i18n-en">Denim team · Woven team</span></span></p>
+      </article>
+      <article class="orgCard">
+        <h3><span><span class="i18n-ko">해외 생산부</span><span class="i18n-en">Overseas production</span></span></h3>
+        <p><span><span class="i18n-ko">중국 지사 · 베트남 지사</span><span class="i18n-en">China branch · Vietnam branch</span></span></p>
+      </article>
+      <article class="orgCard">
+        <h3><span><span class="i18n-ko">경영 지원부</span><span class="i18n-en">Management support</span></span></h3>
+        <p><span><span class="i18n-ko">재무 · HR/GA · 무역</span><span class="i18n-en">Finance · HR/GA · Trade</span></span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section sectionMuted">
+  <div class="container">
+    <div class="overviewGrid">
+      <article class="featureCard">
+        <h3><span><span class="i18n-ko">고경력 인력 운영</span><span class="i18n-en">Experienced team</span></span></h3>
+        <p><span><span class="i18n-ko">신규 법인이지만 고경력 인력이 프로젝트 운영과 커뮤니케이션을 담당합니다.</span><span class="i18n-en">Although the company is newly established, experienced professionals lead project operation and communication.</span></span></p>
+      </article>
+      <article class="featureCard">
+        <h3><span><span class="i18n-ko">검증된 생산 인프라</span><span class="i18n-en">Proven production infrastructure</span></span></h3>
+        <p><span><span class="i18n-ko">장기간 운영된 협력 공장과 라인을 기반으로 안정적인 품질과 납기를 수행합니다.</span><span class="i18n-en">Stable quality and delivery are supported by long-operated partner factories and production lines.</span></span></p>
+      </article>
+      <article class="featureCard">
+        <h3><span><span class="i18n-ko">빠른 대응 구조</span><span class="i18n-en">Responsive workflow</span></span></h3>
+        <p><span><span class="i18n-ko">샘플 검토부터 양산 이슈 대응까지 본사와 공장이 빠르게 연결되는 구조입니다.</span><span class="i18n-en">From sample review to bulk-production issue handling, the head office and factories stay tightly connected.</span></span></p>
+      </article>
+    </div>
+  </div>
+</section>
+<footer class="siteFooter">
   <div class="container">
     <div class="footerTop">
       <div>
         <div class="footerBrand">TJ COMPANY</div>
-        <p class="footerText">Seoul, Korea · Denim Promotion / OEM</p>
-        <p class="footerText">본사: 서울특별시 구로구 디지털로 26길 123 지플러스타워 812호</p>
+        <p class="footerText"><span><span class="i18n-ko">서울, 한국 · 데님 프로모션 / OEM</span><span class="i18n-en">Seoul, Korea · Denim Promotion / OEM</span></span></p>
+        <p class="footerText"><span><span class="i18n-ko">본사: 서울특별시 구로구 디지털로 26길 123 지플러스타워 812호</span><span class="i18n-en">Head office: 812, Gplus Tower, 123 Digital-ro 26-gil, Guro-gu, Seoul</span></span></p>
       </div>
 
       <div class="footerMeta">
@@ -94,7 +256,7 @@
 
     <div class="footerBottom">
       <span>© <span id="year"></span> TJ COMPANY. All rights reserved.</span>
-      <a href="#top">Back to top</a>
+      <a href="#top"><span><span class="i18n-ko">맨 위로</span><span class="i18n-en">Back to top</span></span></a>
     </div>
   </div>
 </footer>
