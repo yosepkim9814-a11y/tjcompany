@@ -1674,3 +1674,286 @@ html[data-lang="en"] .nav-ko, html[data-lang="en"] .i18n-ko{display:none!importa
   .capabilityVisual{height:190px}
   .capabilityContent{padding:20px 20px 22px}
 }
+
+/* ===== unified dark surfaces, pictograms and network deck ===== */
+
+.featureCard,
+.productPreviewCard,
+.orgCard:not(.featured),
+.infoCard,
+.contactCard,
+.processCard,
+.facilityHighlight,
+.facilityMeta,
+.textPanel{
+  background:linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
+  border-color:rgba(255,255,255,.095);
+  color:var(--ink);
+  box-shadow:var(--shadow-soft);
+}
+.featureCard h3,
+.productPreviewCard h3,
+.orgCard h3,
+.infoCard h2,
+.contactCard h2,
+.processCard h3,
+.facilityHighlight h3,
+.facilityMeta h2,
+.textPanel h3{
+  color:#f8faff;
+}
+.featureCard p,
+.productPreviewCard p,
+.orgCard p,
+.infoCard p,
+.contactCard p,
+.processCard p,
+.facilityHighlight p,
+.facilityMeta p,
+.textPanel p{
+  color:#aeb7c9;
+}
+.btnGhostDark{
+  background:rgba(255,255,255,.055);
+  color:#f8faff;
+  border-color:rgba(255,255,255,.16);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055);
+}
+.btnGhostDark:hover{
+  background:rgba(255,255,255,.11);
+  border-color:rgba(255,255,255,.28);
+}
+.btnGhostDark:focus-visible,
+.networkTab:focus-visible,
+.sliderBtn:focus-visible{
+  outline:3px solid rgba(127,151,255,.48);
+  outline-offset:3px;
+}
+
+.statHeading{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.statHeading > span{
+  color:rgba(255,255,255,.76);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.statHeading > span span,
+.statCard strong span,
+.statCard small span{
+  display:inline;
+  color:inherit;
+  font-size:inherit;
+  letter-spacing:inherit;
+  text-transform:inherit;
+}
+.statPictogram,
+.featureIcon svg,
+.facilityIcon svg,
+.metricIcon svg{
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.statPictogram{
+  flex:0 0 auto;
+  width:19px;
+  height:19px;
+  color:#a8b7ff;
+}
+.featureIcon,
+.facilityIcon,
+.metricIcon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#a8b7ff;
+  background:linear-gradient(145deg, rgba(127,151,255,.18), rgba(127,151,255,.07));
+  border:1px solid rgba(151,169,255,.18);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+}
+.featureIcon{
+  width:46px;
+  height:46px;
+  margin-bottom:24px;
+  border-radius:15px;
+}
+.featureIcon svg{width:23px;height:23px}
+.facilityIcon{
+  flex:0 0 auto;
+  width:44px;
+  height:44px;
+  border-radius:14px;
+}
+.facilityIcon svg{width:22px;height:22px}
+.facilityHead{align-items:flex-start}
+.metricIcon{
+  width:42px;
+  height:42px;
+  margin-bottom:20px;
+  border-radius:14px;
+}
+.metricIcon svg{width:21px;height:21px}
+
+.networkSlider{
+  overflow:visible;
+}
+.networkDeck{
+  margin-top:32px;
+}
+.networkTabs{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:10px;
+  margin-bottom:18px;
+}
+.networkTab{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-rows:auto auto;
+  column-gap:12px;
+  align-items:center;
+  min-height:76px;
+  padding:14px 16px;
+  color:#8f99ac;
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:18px;
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+  transition:transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+.networkTab:hover{
+  transform:translateY(-2px);
+  color:#e9edff;
+  border-color:rgba(255,255,255,.16);
+}
+.networkTab > span{
+  grid-row:1 / span 2;
+  color:#7488e8;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.networkTab strong{
+  color:inherit;
+  font-size:16px;
+  line-height:1.1;
+}
+.networkTab small{
+  color:inherit;
+  font-size:11px;
+  letter-spacing:.05em;
+  opacity:.72;
+}
+.networkTab.active{
+  color:#fff;
+  background:linear-gradient(135deg, rgba(101,124,235,.25), rgba(255,255,255,.065));
+  border-color:rgba(147,164,255,.34);
+  box-shadow:0 16px 34px rgba(0,0,0,.19), inset 0 1px 0 rgba(255,255,255,.08);
+}
+.networkTab.active > span{color:#b8c4ff}
+.networkViewport{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:0 22px 22px 0;
+}
+.networkViewport::before,
+.networkViewport::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  border-radius:30px;
+}
+.networkViewport::before{
+  inset:22px 0 0 22px;
+  z-index:0;
+  background:linear-gradient(145deg, rgba(127,151,255,.15), rgba(255,255,255,.025));
+  border:1px solid rgba(143,161,255,.17);
+}
+.networkViewport::after{
+  inset:11px 11px 11px 11px;
+  z-index:1;
+  background:linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+  border:1px solid rgba(255,255,255,.10);
+}
+.networkTrack{
+  position:relative;
+  z-index:2;
+  width:calc(100% - 22px);
+  will-change:transform;
+}
+.networkSlide{
+  gap:18px;
+}
+.networkInfo,
+.networkVisual{
+  position:relative;
+  z-index:1;
+}
+.networkDeckFooter{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin-top:18px;
+}
+.networkProgress{
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+  color:#7e8798;
+  font-size:13px;
+}
+.networkProgress strong{
+  color:#fff;
+  font-size:25px;
+  letter-spacing:-.03em;
+}
+.networkProgress small{
+  margin-left:8px;
+  color:#a1aabc;
+  font-size:12px;
+}
+.networkDeckFooter .sliderControls{
+  justify-content:flex-end;
+  margin-top:0;
+}
+.networkDeckFooter .sliderDots{
+  min-width:64px;
+  justify-content:flex-end;
+}
+
+@media (max-width: 680px){
+  .networkTabs{
+    display:flex;
+    overflow-x:auto;
+    padding:2px 2px 7px;
+    scrollbar-width:none;
+  }
+  .networkTabs::-webkit-scrollbar{display:none}
+  .networkTab{flex:0 0 154px;min-height:70px;padding:12px 13px}
+  .networkViewport{padding:0 14px 14px 0}
+  .networkViewport::before{inset:14px 0 0 14px;border-radius:24px}
+  .networkViewport::after{inset:7px 7px 7px 7px;border-radius:24px}
+  .networkTrack{width:calc(100% - 14px)}
+  .networkDeckFooter{align-items:flex-end;gap:12px}
+  .networkProgress{flex-wrap:wrap;max-width:150px}
+  .networkProgress small{flex-basis:100%;margin-left:0}
+  .networkDeckFooter .sliderControls{gap:10px}
+  .sliderBtn{width:44px;height:44px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .networkTrack,
+  .networkTab,
+  .btn{transition:none}
+}
