@@ -22,7 +22,7 @@
           }
         })();
       </script>
-      <link rel="stylesheet" href="assets/css/style.css?v=20260921-3" />
+      <link rel="stylesheet" href="assets/css/style.css?v=20260922-1" />
 
       <meta property="og:site_name" content="TJ COMPANY" />
       <meta property="og:title" content="Production | TJ COMPANY" />
@@ -107,14 +107,17 @@
   <div class="container">
     <div class="facilityHighlightGrid">
       <article class="facilityHighlight">
+        <div class="metricIcon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg></div>
         <h3><span><span class="i18n-ko">연간 생산 역량</span><span class="i18n-en">Annual capacity</span></span></h3>
         <p>3.0M pcs / year</p>
       </article>
       <article class="facilityHighlight">
+        <div class="metricIcon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20V9l5 3V8l5 3V4h4v5l4 2v9M3 20h18M7 16h2m3 0h2m3 0h2"/></svg></div>
         <h3><span><span class="i18n-ko">제조 파트너</span><span class="i18n-en">Manufacturing partners</span></span></h3>
         <p><span><span class="i18n-ko">베트남 2개 생산 거점</span><span class="i18n-en">Two Vietnam production bases</span></span></p>
       </article>
       <article class="facilityHighlight">
+        <div class="metricIcon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3h8l1 4 4 2-3 4v8H6v-8L3 9l4-2 1-4Z"/><path d="M9 3c.5 2 1.5 3 3 3s2.5-1 3-3"/></svg></div>
         <h3><span><span class="i18n-ko">핵심 품목</span><span class="i18n-en">Core coverage</span></span></h3>
         <p><span><span class="i18n-ko">데님 전 품목 · 우븐 팬츠</span><span class="i18n-en">Denim all items · Woven pants</span></span></p>
       </article>
@@ -125,12 +128,18 @@
 <section class="section sectionMuted">
   <div class="container">
     <div class="sectionIntro compact">
-      <span class="sectionLabel">NETWORK OVERVIEW</span>
-      <h2><span><span class="i18n-ko">생산 거점을 한 장씩 보기 쉽게 정리했습니다.</span><span class="i18n-en">A clearer way to review each production base.</span></span></h2>
-      <p><span><span class="i18n-ko">공장 사진은 과하게 크게 보이지 않도록 정리하고, 시설 정보와 주요 강점을 함께 볼 수 있게 구성했습니다.</span><span class="i18n-en">Factory photos are kept at a balanced size, while key facility information and strengths remain easy to review in one view.</span></span></p>
+      <span class="sectionLabel">PRODUCTION NETWORK</span>
+      <h2><span><span class="i18n-ko">프로젝트 특성에 맞춰 연결되는 글로벌 생산 네트워크</span><span class="i18n-en">A global production network aligned to each project.</span></span></h2>
+      <p><span><span class="i18n-ko">서울 본사의 개발·품질 관리와 베트남 제조 파트너의 생산 역량을 연결해 샘플부터 양산, 납기까지 일관되게 운영합니다.</span><span class="i18n-en">Seoul-based development and quality control connect with our Vietnam manufacturing partners to manage every stage from sampling through bulk production and delivery.</span></span></p>
     </div>
-        <div class="networkSlider" data-slider>
-      <div class="networkTrack" data-slider-track>
+    <div class="networkDeck networkSlider" data-slider>
+      <div class="networkTabs" role="tablist" aria-label="Production network locations">
+        <button class="networkTab active" type="button" role="tab" aria-selected="true" data-slide-to="0"><span>01</span><strong>ETBJ</strong><small>Ho Chi Minh</small></button>
+        <button class="networkTab" type="button" role="tab" aria-selected="false" data-slide-to="1"><span>02</span><strong>JB Garment</strong><small>Long An</small></button>
+        <button class="networkTab" type="button" role="tab" aria-selected="false" data-slide-to="2"><span>03</span><strong>Seoul HQ</strong><small>Korea</small></button>
+      </div>
+      <div class="networkViewport">
+        <div class="networkTrack" data-slider-track>
         <article class="networkSlide" data-slide>
   <div class="networkInfo">
     <span class="cardLabel">ETBJ Garment</span>
@@ -205,13 +214,20 @@
   </div>
 </article>
 
-      </div>
-      <div class="sliderControls">
-        <div class="sliderButtons">
-          <button class="sliderBtn" type="button" data-prev aria-label="Previous slide">‹</button>
-          <button class="sliderBtn" type="button" data-next aria-label="Next slide">›</button>
         </div>
-        <div class="sliderDots" data-slider-dots></div>
+      </div>
+      <div class="networkDeckFooter">
+        <div class="networkProgress" aria-live="polite">
+          <strong data-slider-current>01</strong><span>/</span><span data-slider-total>03</span>
+          <small><span><span class="i18n-ko">생산 거점을 선택해 확인하세요</span><span class="i18n-en">Select a production location</span></span></small>
+        </div>
+        <div class="sliderControls">
+          <div class="sliderDots" data-slider-dots></div>
+          <div class="sliderButtons">
+            <button class="sliderBtn" type="button" data-prev aria-label="Previous slide">‹</button>
+            <button class="sliderBtn" type="button" data-next aria-label="Next slide">›</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -338,6 +354,6 @@
   </figure>
 </div>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=20260922-1"></script>
 </body>
 </html>
