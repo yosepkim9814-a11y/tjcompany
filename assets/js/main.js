@@ -149,6 +149,9 @@
     const dotsWrap = slider.querySelector('[data-slider-dots]');
     const prev = slider.querySelector('[data-prev]');
     const next = slider.querySelector('[data-next]');
+    const tabs = Array.from(slider.querySelectorAll('[data-slide-to]'));
+    const currentLabel = slider.querySelector('[data-slider-current]');
+    const totalLabel = slider.querySelector('[data-slider-total]');
     let index = 0;
 
     if (!track || !slides.length) return;
@@ -171,11 +174,34 @@
     function go(i) {
       index = (i + slides.length) % slides.length;
       track.style.transform = 'translateX(' + (-100 * index) + '%)';
+      slides.forEach(function (slide, slideIndex) {
+        slide.setAttribute('aria-hidden', String(slideIndex !== index));
+      });
+      tabs.forEach(function (tab, tabIndex) {
+        const isActive = tabIndex === index;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', String(isActive));
+        tab.setAttribute('tabindex', isActive ? '0' : '-1');
+      });
+      if (currentLabel) currentLabel.textContent = String(index + 1).padStart(2, '0');
       renderDots();
     }
 
     if (prev) prev.addEventListener('click', function () { go(index - 1); });
     if (next) next.addEventListener('click', function () { go(index + 1); });
+    if (totalLabel) totalLabel.textContent = String(slides.length).padStart(2, '0');
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        go(Number(tab.getAttribute('data-slide-to')) || 0);
+      });
+      tab.addEventListener('keydown', function (event) {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        go(index + (event.key === 'ArrowRight' ? 1 : -1));
+        if (tabs[index]) tabs[index].focus();
+      });
+    });
 
     let touchStartX = 0;
     let touchEndX = 0;
